@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Apartments for Rent | [Apartment Name]</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: #333; }
+    header { background: #1a365d; color: white; padding: 1.5rem; text-align: center; }
+    .hero { padding: 3rem 1rem; text-align: center; background: #f7fafc; }
+    .btn { background: #2b6cb0; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; display: inline-block; }
+    .section { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    form { display: grid; gap: 0.75rem; max-width: 400px; margin: 1.5rem auto; }
+    input, select, button { padding: 0.75rem; font-size: 1rem; }
+    footer { background: #2d3748; color: #a0aec0; padding: 1.5rem; font-size: 0.85rem; text-align: center; }
+    footer a { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>[Apartment Name]</h1>
+    <p>Call Us: <a href="tel:+1234567890" style="color: #63b3ed;">+1 (234) 567-890</a></p>
+  </header>
+
+  <section class="hero">
+    <h2>Modern 1, 2 & 3 Bedroom Apartments in [City/Neighborhood]</h2>
+    <p>Starting at $1,200/mo • Gated Community • Swimming Pool & Gym</p>
+    
+    <!-- Replace action URL with your Formspree/Web3Forms endpoint -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <button type="submit" class="btn">Schedule a Private Tour</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h3>Property Highlights & Amenities</h3>
+    <ul>
+      <li>24/7 Security & Dedicated Parking</li>
+      <li>Close to Metro Station & Top Schools</li>
+      <li>Pet-friendly community with dedicated dog park</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Address: 123 Main Street, [City, State] | Phone: (234) 567-890</p>
+    <p><a href="#privacy">Privacy Policy</a> | © 2026 [Company Name]. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
