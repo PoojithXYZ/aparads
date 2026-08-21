@@ -1,54 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury Apartments for Rent | [Apartment Name]</title>
-  <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 0; color: #333; }
-    header { background: #1a365d; color: white; padding: 1.5rem; text-align: center; }
-    .hero { padding: 3rem 1rem; text-align: center; background: #f7fafc; }
-    .btn { background: #2b6cb0; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 4px; display: inline-block; }
-    .section { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-    form { display: grid; gap: 0.75rem; max-width: 400px; margin: 1.5rem auto; }
-    input, select, button { padding: 0.75rem; font-size: 1rem; }
-    footer { background: #2d3748; color: #a0aec0; padding: 1.5rem; font-size: 0.85rem; text-align: center; }
-    footer a { color: #fff; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Living | Luxury Apartment Residences</title>
+  <meta name="description" content="Discover premium luxury apartments and modern residential developments.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>[Apartment Name]</h1>
-    <p>Call Us: <a href="tel:+1234567890" style="color: #63b3ed;">+1 (234) 567-890</a></p>
+  <!-- Sticky Global Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" id="brand-logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">AURA<span>LIVING</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active" data-page="home">Home</a>
+        <a href="#azure-heights" class="nav-link" data-page="azure-heights">Azure Heights</a>
+        <a href="#veridian-park" class="nav-link" data-page="veridian-park">Veridian Park</a>
+        <a href="#solarium-lofts" class="nav-link" data-page="solarium-lofts">Solarium Lofts</a>
+        <a href="#about" class="nav-link" data-page="about">About</a>
+      </nav>
+
+      <a href="#home" class="nav-cta" onclick="document.querySelector('#nav-menu a[data-page=\'home\']').click()">Schedule Tour</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Modern 1, 2 & 3 Bedroom Apartments in [City/Neighborhood]</h2>
-    <p>Starting at $1,200/mo • Gated Community • Swimming Pool & Gym</p>
-    
-    <!-- Replace action URL with your Formspree/Web3Forms endpoint -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <button type="submit" class="btn">Schedule a Private Tour</button>
-    </form>
-  </section>
+  <!-- Main Multi-View Content Container -->
+  <main class="page-container">
 
-  <section class="section">
-    <h3>Property Highlights & Amenities</h3>
-    <ul>
-      <li>24/7 Security & Dedicated Parking</li>
-      <li>Close to Metro Station & Top Schools</li>
-      <li>Pet-friendly community with dedicated dog park</li>
-    </ul>
-  </section>
+    <!-- ==================== PAGE 1: HOME ==================== -->
+    <section id="page-home" class="page-view active">
+      <section class="hero-banner">
+        <div class="hero-content">
+          <span class="badge">Modern Urban Residences</span>
+          <h1>Curated Spaces Designed for Modern Living</h1>
+          <p>Explore luxury living across three distinct residential developments. Seamless leasing, state-of-the-art architecture, and prime downtown locations.</p>
+          <div class="hero-actions">
+            <a href="#azure-heights" class="btn btn-primary">Explore Residences</a>
+            <a href="#about" class="btn btn-secondary">Meet The Team</a>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>Address: 123 Main Street, [City, State] | Phone: (234) 567-890</p>
-    <p><a href="#privacy">Privacy Policy</a> | © 2026 [Company Name]. All rights reserved.</p>
+      <!-- Resident & Buyer Help Guide -->
+      <section class="guide-section">
+        <div class="section-header">
+          <h2>Resident & Buyer Help Guide</h2>
+          <p>Everything you need to know about finding and securing your new apartment.</p>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <div class="guide-number">01</div>
+            <h3>Select a Project</h3>
+            <p>Browse our three unique developments below to find floor plans and amenities tailored to your lifestyle.</p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-number">02</div>
+            <h3>Schedule a Walkthrough</h3>
+            <p>Book private on-site viewings or take interactive 3D virtual tours with our leasing advisors.</p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-number">03</div>
+            <h3>Digital Application</h3>
+            <p>Submit documentation, undergo verification, and finalize digital lease agreements in 24 hours.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 Project Cards (Exclusive to Home) -->
+      <section class="projects-preview-section">
+        <div class="section-header">
+          <h2>Featured Residential Properties</h2>
+          <p>Select any property to view complete floor plans, specifications, and amenity packages.</p>
+        </div>
+
+        <div class="project-cards-grid">
+          <!-- Card 1 -->
+          <article class="property-card">
+            <div class="property-card-img" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80');">
+              <span class="property-tag">High-Rise Luxury</span>
+            </div>
+            <div class="property-card-body">
+              <h3>Azure Heights</h3>
+              <p class="property-location">Downtown Financial District</p>
+              <p class="property-desc">Panoramic skyline views, private balconies, and dedicated 24/7 concierge services.</p>
+              <div class="property-meta">
+                <span>1 - 3 Bed Units</span>
+                <span>From $2,850/mo</span>
+              </div>
+              <a href="#azure-heights" class="btn btn-card">View Property Details &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="property-card">
+            <div class="property-card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80');">
+              <span class="property-tag">Eco & Family</span>
+            </div>
+            <div class="property-card-body">
+              <h3>Veridian Park</h3>
+              <p class="property-location">Midtown Green Corridor</p>
+              <p class="property-desc">LEED Gold certified garden apartments featuring private courtyards and EV charging.</p>
+              <div class="property-meta">
+                <span>2 - 4 Bed Units</span>
+                <span>From $3,400/mo</span>
+              </div>
+              <a href="#veridian-park" class="btn btn-card">View Property Details &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="property-card">
+            <div class="property-card-img" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80');">
+              <span class="property-tag">Industrial Modern</span>
+            </div>
+            <div class="property-card-body">
+              <h3>Solarium Lofts</h3>
+              <p class="property-location">Historic Arts Quarter</p>
+              <p class="property-desc">Open-concept loft homes with 14ft ceilings, exposed timber, and polished concrete floors.</p>
+              <div class="property-meta">
+                <span>Studio - 2 Bed</span>
+                <span>From $2,400/mo</span>
+              </div>
+              <a href="#solarium-lofts" class="btn btn-card">View Property Details &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== PAGE 2: AZURE HEIGHTS ==================== -->
+    <section id="page-azure-heights" class="page-view">
+      <div class="project-detail-hero" style="background-image: linear-gradient(rgba(17,24,39,0.7), rgba(17,24,39,0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-content">
+          <span class="badge">Signature Tower</span>
+          <h1>Azure Heights</h1>
+          <p>42 Stories of Unrivaled Architectural Elegance & Skyline Views</p>
+        </div>
+      </div>
+
+      <div class="detail-container">
+        <div class="detail-main">
+          <h2>Overview & Architecture</h2>
+          <p>Azure Heights stands as an iconic pillar in the downtown core. Built with energy-efficient smart glass and acoustic engineering, each home delivers serenity above the energetic city streets.</p>
+          
+          <h3>Building Specifications</h3>
+          <ul class="specs-list">
+            <li><strong>Total Units:</strong> 184 High-end units</li>
+            <li><strong>Ceiling Height:</strong> 10.5 ft floor-to-ceiling glass</li>
+            <li><strong>Parking:</strong> Underground multi-level automated valet</li>
+            <li><strong>HVAC:</strong> Individual HEPA-filtered climate zones</li>
+          </ul>
+
+          <h3>Available Floor Plans</h3>
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Layout</th>
+                <th>Square Feet</th>
+                <th>Bathrooms</th>
+                <th>Starting Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1-Bedroom Suite (Skyline)</td>
+                <td>740 sq ft</td>
+                <td>1 Bath</td>
+                <td>$2,850 / mo</td>
+              </tr>
+              <tr>
+                <td>2-Bedroom Executive</td>
+                <td>1,120 sq ft</td>
+                <td>2 Baths</td>
+                <td>$3,600 / mo</td>
+              </tr>
+              <tr>
+                <td>Penthouse Corner Unit</td>
+                <td>1,850 sq ft</td>
+                <td>2.5 Baths</td>
+                <td>$5,900 / mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="detail-sidebar">
+          <div class="sidebar-box">
+            <h3>Exclusive Amenities</h3>
+            <ul class="amenities-checklist">
+              <li>✓ Heated Rooftop Infinity Pool</li>
+              <li>✓ Equinox-Grade Fitness Facility</li>
+              <li>✓ Private Dining & Wine Tasting Room</li>
+              <li>✓ 24-Hour Uniformed Valet & Doorman</li>
+              <li>✓ Pet Spa & Rooftop Run</li>
+            </ul>
+            <hr>
+            <div class="inquiry-box">
+              <h4>Interested in Azure Heights?</h4>
+              <p>Contact leasing office: <strong>(555) 302-8819</strong></p>
+              <a href="#home" class="btn btn-primary btn-block">Back to All Properties</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 3: VERIDIAN PARK ==================== -->
+    <section id="page-veridian-park" class="page-view">
+      <div class="project-detail-hero" style="background-image: linear-gradient(rgba(17,24,39,0.7), rgba(17,24,39,0.85)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-content">
+          <span class="badge">Eco-Forward Community</span>
+          <h1>Veridian Park</h1>
+          <p>Sustainable, Garden-Centric Townhomes & Apartments in Midtown</p>
+        </div>
+      </div>
+
+      <div class="detail-container">
+        <div class="detail-main">
+          <h2>Overview & Green Philosophy</h2>
+          <p>Veridian Park was developed with environmental sustainability at its core. Featuring rooftop solar arrays, zero-VOC materials, and 2 acres of private landscaped community parkland.</p>
+          
+          <h3>Building Specifications</h3>
+          <ul class="specs-list">
+            <li><strong>Certification:</strong> LEED Gold Certified</li>
+            <li><strong>Energy:</strong> 40% offset by rooftop solar panels</li>
+            <li><strong>Commute:</strong> Direct access to Green Line bike & transit corridor</li>
+            <li><strong>EV Readiness:</strong> 100% EV charging equipped parking stalls</li>
+          </ul>
+
+          <h3>Available Floor Plans</h3>
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Layout</th>
+                <th>Square Feet</th>
+                <th>Bathrooms</th>
+                <th>Starting Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2-Bedroom Garden Flat</td>
+                <td>1,050 sq ft</td>
+                <td>2 Baths</td>
+                <td>$3,400 / mo</td>
+              </tr>
+              <tr>
+                <td>3-Bedroom Parkside Villa</td>
+                <td>1,480 sq ft</td>
+                <td>2.5 Baths</td>
+                <td>$4,200 / mo</td>
+              </tr>
+              <tr>
+                <td>4-Bedroom Multi-Level Townhome</td>
+                <td>2,100 sq ft</td>
+                <td>3.5 Baths</td>
+                <td>$6,100 / mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="detail-sidebar">
+          <div class="sidebar-box">
+            <h3>Community Perks</h3>
+            <ul class="amenities-checklist">
+              <li>✓ Private 2-Acre Nature Reserve</li>
+              <li>✓ Organic Community Garden Plots</li>
+              <li>✓ Solar-Heated Lap Pool</li>
+              <li>✓ Resident Co-Working Hub & Podcast Studio</li>
+              <li>✓ Children's Adventure Playground</li>
+            </ul>
+            <hr>
+            <div class="inquiry-box">
+              <h4>Interested in Veridian Park?</h4>
+              <p>Contact leasing office: <strong>(555) 302-8820</strong></p>
+              <a href="#home" class="btn btn-primary btn-block">Back to All Properties</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 4: SOLARIUM LOFTS ==================== -->
+    <section id="page-solarium-lofts" class="page-view">
+      <div class="project-detail-hero" style="background-image: linear-gradient(rgba(17,24,39,0.7), rgba(17,24,39,0.85)), url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80');">
+        <div class="detail-hero-content">
+          <span class="badge">Artisan District</span>
+          <h1>Solarium Lofts</h1>
+          <p>Industrial Heritage Meets Contemporary Loft Living</p>
+        </div>
+      </div>
+
+      <div class="detail-container">
+        <div class="detail-main">
+          <h2>The Industrial Aesthetic</h2>
+          <p>Housed inside a converted 1920s warehouse, Solarium Lofts blends original timber beams and exposed masonry with Italian custom kitchens and designer matte-black fixtures.</p>
+          
+          <h3>Building Specifications</h3>
+          <ul class="specs-list">
+            <li><strong>Ceiling Height:</strong> Soaring 14-foot authentic beam ceilings</li>
+            <li><strong>Flooring:</strong> Hand-poured polished architectural concrete</li>
+            <li><strong>Windows:</strong> Triple-pane steel frame factory casements</li>
+            <li><strong>Connectivity:</strong> 10 Gbps symmetrical fiber infrastructure</li>
+          </ul>
+
+          <h3>Available Floor Plans</h3>
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Layout</th>
+                <th>Square Feet</th>
+                <th>Bathrooms</th>
+                <th>Starting Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Open Studio Loft</td>
+                <td>620 sq ft</td>
+                <td>1 Bath</td>
+                <td>$2,400 / mo</td>
+              </tr>
+              <tr>
+                <td>1-Bedroom Mezzanine Loft</td>
+                <td>890 sq ft</td>
+                <td>1.5 Baths</td>
+                <td>$2,950 / mo</td>
+              </tr>
+              <tr>
+                <td>2-Bedroom Live/Work Loft</td>
+                <td>1,350 sq ft</td>
+                <td>2 Baths</td>
+                <td>$3,850 / mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="detail-sidebar">
+          <div class="sidebar-box">
+            <h3>Loft Amenities</h3>
+            <ul class="amenities-checklist">
+              <li>✓ Rooftop Lounge & Fire Pits</li>
+              <li>✓ Artist Studio & Workshop Space</li>
+              <li>✓ Cold Brew & Espresso Bar in Lobby</li>
+              <li>✓ Secure Indoor Bike & Kayak Storage</li>
+              <li>✓ Gated Parcel Management Lockers</li>
+            </ul>
+            <hr>
+            <div class="inquiry-box">
+              <h4>Interested in Solarium Lofts?</h4>
+              <p>Contact leasing office: <strong>(555) 302-8821</strong></p>
+              <a href="#home" class="btn btn-primary btn-block">Back to All Properties</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 5: ABOUT ==================== -->
+    <section id="page-about" class="page-view">
+      <div class="about-wrapper">
+        <div class="about-header">
+          <span class="badge">Our Leadership</span>
+          <h1>About Aura Living</h1>
+          <p>Pioneering thoughtfully curated apartment communities built for longevity, wellness, and connectivity.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-card">
+            <!-- Professional Face Photo -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Elena Vance, Managing Principal and Lead Developer" class="face-photo">
+            <div class="person-meta">
+              <h3>Elena Vance</h3>
+              <p class="person-role">Founder & Managing Principal</p>
+              <p class="person-email">e.vance@auraliving.com</p>
+            </div>
+          </div>
+
+          <div class="about-content-card">
+            <h2>Designing Neighborhoods Since 2012</h2>
+            <p>Elena Vance founded Aura Living with a singular philosophy: high-density residential living should inspire comfort, cultivate creativity, and minimize environmental impact.</p>
+            
+            <p>Over the past decade, our team has developed over 1.2 million square feet of residential real estate across prime urban centers. We operate with an owner-managed model, ensuring direct accountability to our residents every single day.</p>
+
+            <div class="stats-row">
+              <div class="stat-box">
+                <span class="stat-num">3</span>
+                <span class="stat-lbl">Active Communities</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">500+</span>
+                <span class="stat-lbl">Happy Residents</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">98%</span>
+                <span class="stat-lbl">Leasing Retention</span>
+              </div>
+            </div>
+
+            <div class="about-contact-cta">
+              <h3>Direct Inquiries</h3>
+              <p>For investment or partnership questions, email us directly at <strong>hello@auraliving.com</strong> or call <strong>+1 (800) 555-AURA</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Aura Living Development Group. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#azure-heights">Azure Heights</a>
+        <a href="#veridian-park">Veridian Park</a>
+        <a href="#solarium-lofts">Solarium Lofts</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Hash-Based Client Routing Script -->
+  <script>
+    (function () {
+      const links = document.querySelectorAll('.nav-link, .nav-menu a, .brand-logo, .property-card a, .footer-links a');
+      const pages = document.querySelectorAll('.page-view');
+
+      function navigateTo(hash) {
+        let targetId = hash.replace('#', '') || 'home';
+        const targetSection = document.getElementById('page-' + targetId);
+
+        // Fallback to home if unknown route
+        if (!targetSection) {
+          targetId = 'home';
+        }
+
+        // Hide all pages, display active
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById('page-' + targetId).classList.add('active');
+
+        // Update nav active states
+        document.querySelectorAll('.nav-link').forEach(link => {
+          if (link.getAttribute('data-page') === targetId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        // Scroll smoothly to top on route change
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Listen to URL hash change
+      window.addEventListener('hashchange', () => {
+        navigateTo(window.location.hash);
+      });
+
+      // Initialize on first page load
+      window.addEventListener('DOMContentLoaded', () => {
+        navigateTo(window.location.hash);
+      });
+    })();
+  </script>
 </body>
 </html>
