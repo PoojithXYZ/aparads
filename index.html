@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real Estate & Apartment Living</title>
-  <meta name="description" content="Explore luxury apartments and modern residential developments." />
-  
-  <!-- Google Fonts & Tailwind CDN -->
+  <title>Laxmika Builders | Premium Apartments in Narasaraopet</title>
+  <meta name="description" content="Explore luxury residential apartments and gated communities by Laxmika Builders in Narasaraopet." />
+
+  <!-- Google Fonts & Tailwind CSS CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,11 +21,14 @@
           },
           colors: {
             brand: {
-              50: '#f0f7ff',
-              100: '#e0effe',
-              500: '#0284c7',
-              600: '#0369a1',
-              900: '#0c4a6e',
+              50: '#fffaf5',   /* Ultra light warm orange */
+              100: '#ffeedd',  /* Light orange badge/bg */
+              200: '#fed7aa',  /* Soft peach */
+              400: '#fb923c',  /* Warm orange */
+              500: '#f97316',  /* Primary vibrant orange */
+              600: '#ea580c',  /* Deep button orange */
+              700: '#c2410c',  /* Dark accent orange */
+              900: '#7c2d12',  /* Rich dark wood/orange */
             }
           }
         }
@@ -34,7 +37,7 @@
   </script>
 
   <style>
-    /* Smooth transitions between page views */
+    /* Smooth view transitions */
     .page-view {
       display: none;
       opacity: 0;
@@ -44,59 +47,79 @@
       display: block;
       opacity: 1;
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-brand-50/50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
 
   <!-- ========================================== -->
-  <!-- HEADER & NAVIGATION BAR                    -->
+  <!-- HEADER & NAVIGATION (LIGHT ORANGE THEME)   -->
   <!-- ========================================== -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-200/60 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-24">
         
-        <!-- Clickable Logo (Routes to Home) -->
-        <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-brand-900 text-white flex items-center justify-center font-extrabold text-xl shadow-md group-hover:scale-105 transition-transform">
-            <span class="data-brand-initial">B</span>
+        <!-- Clickable Logo (Vertical Rectangle Box + Text on Right) -->
+        <a href="#home" class="flex items-center gap-3.5 group">
+          <!-- Taller Rectangular Box for logo.png -->
+          <div class="w-12 h-16 rounded-xl bg-gradient-to-b from-brand-500 to-brand-700 p-1 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform overflow-hidden border border-orange-300">
+            <img src="logo.png" alt="Laxmika Builders Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-white font-extrabold text-xl\'>LB</span>';" class="w-full h-full object-contain" />
           </div>
-          <div>
-            <span class="text-xl font-extrabold text-slate-900 block leading-tight tracking-tight data-brand-name">Builder Name</span>
-            <span class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Properties & Living</span>
+          <!-- Right Side Text -->
+          <div class="flex flex-col">
+            <span class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight leading-tight group-hover:text-brand-600 transition-colors data-brand-name">
+              Laxmika Builders
+            </span>
+            <span class="text-xs font-bold text-brand-600 uppercase tracking-widest flex items-center gap-1 mt-0.5">
+              <span>📍</span> <span class="data-brand-location">Narasaraopet</span>
+            </span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Bar: Home, 3 Project Buttons, About -->
-        <nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
-          <a href="#home" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 transition-colors" data-page="home">
+        <!-- Desktop Navigation: Home -> 3 (Latest) -> 2 (Green Leaf) -> 1 (Iris Homes) -> Founder -> Inquire -->
+        <nav class="hidden xl:flex items-center gap-2">
+          <a href="#home" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all" data-page="home">
             Home
           </a>
           
-          <!-- Individual Project Buttons in Header -->
-          <a href="#skyline-heights" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 transition-colors" data-page="skyline-heights">
-            <span class="data-p1-nav">Skyline Heights</span>
+          <!-- 3: Latest Project (Placed towards logo/left) -->
+          <a href="#latest-project" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-1.5" data-page="latest-project">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="data-p3-nav">Latest Project</span>
           </a>
           
-          <a href="#greenwood-residency" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 transition-colors" data-page="greenwood-residency">
-            <span class="data-p2-nav">Greenwood Residency</span>
+          <!-- 2: Green Leaf (Middle) -->
+          <a href="#green-leaf" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all" data-page="green-leaf">
+            <span class="data-p2-nav">Green Leaf</span>
           </a>
           
-          <a href="#azure-bay" class="nav-btn px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 transition-colors" data-page="azure-bay">
-            <span class="data-p3-nav">Azure Bay</span>
+          <!-- 1: Iris Homes (Right among three) -->
+          <a href="#iris-homes" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-1.5" data-page="iris-homes">
+            <span class="data-p1-nav">Iris Homes</span>
+            <span class="text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-bold uppercase">Sold Out</span>
           </a>
           
-          <a href="#about" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 transition-colors" data-page="about">
-            About Founder
+          <!-- About Founder (with circular profile picture inside button) -->
+          <a href="#about" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-2" data-page="about">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="Founder" class="w-6 h-6 rounded-full object-cover ring-2 ring-brand-500 data-founder-mini-pic" />
+            <span>Founder</span>
           </a>
 
-          <a href="#home" onclick="setTimeout(()=>document.getElementById('contact-section').scrollIntoView({behavior:'smooth'}), 100)" class="ml-2 px-4 py-2.5 rounded-lg text-sm font-bold bg-brand-600 text-white hover:bg-brand-500 shadow-md shadow-brand-500/20 transition-all">
-            Inquire Now
+          <!-- Inquire Now: Smoothly takes user to Contact Form in Footer -->
+          <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="ml-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-brand-500 text-white hover:bg-brand-600 shadow-md shadow-brand-500/25 hover:shadow-lg transition-all flex items-center gap-1.5">
+            <span>Inquire Now</span>
+            <span>&darr;</span>
           </a>
         </nav>
 
-        <!-- Mobile Menu Hamburger -->
-        <div class="md:hidden">
-          <button id="mobile-toggle" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100">
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="xl:hidden flex items-center gap-2">
+          <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-brand-500 text-white">
+            Inquire
+          </a>
+          <button id="mobile-toggle" class="p-2 rounded-xl text-slate-700 hover:bg-orange-100 transition-colors focus:outline-none" aria-label="Toggle menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -105,145 +128,179 @@
 
       </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 py-3 flex flex-col gap-1">
-        <a href="#home" class="mobile-nav-btn px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100">Home</a>
-        <a href="#skyline-heights" class="mobile-nav-btn px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100 data-p1-nav">Skyline Heights</a>
-        <a href="#greenwood-residency" class="mobile-nav-btn px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100 data-p2-nav">Greenwood Residency</a>
-        <a href="#azure-bay" class="mobile-nav-btn px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100 data-p3-nav">Azure Bay</a>
-        <a href="#about" class="mobile-nav-btn px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-100">About Founder</a>
+      <!-- Mobile Dropdown Navigation Menu -->
+      <div id="mobile-menu" class="hidden xl:hidden border-t border-orange-100 py-3 flex flex-col gap-1.5 bg-white">
+        <a href="#home" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50">Home</a>
+        <a href="#latest-project" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 flex items-center justify-between">
+          <span class="data-p3-nav">Latest Project</span>
+          <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">New</span>
+        </a>
+        <a href="#green-leaf" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 data-p2-nav">Green Leaf</a>
+        <a href="#iris-homes" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 flex items-center justify-between">
+          <span class="data-p1-nav">Iris Homes</span>
+          <span class="text-xs text-slate-500 font-bold bg-slate-100 px-2 py-0.5 rounded">Sold Out</span>
+        </a>
+        <a href="#about" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 flex items-center gap-2">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="Founder" class="w-5 h-5 rounded-full object-cover data-founder-mini-pic" />
+          <span>About Founder</span>
+        </a>
       </div>
     </div>
   </header>
 
 
   <!-- ========================================== -->
-  <!-- MAIN CONTENT CONTAINER (PAGES)             -->
+  <!-- MAIN CONTENT CONTAINER (VIEWS)             -->
   <!-- ========================================== -->
   <main class="flex-grow">
 
-    <!-- PAGE 1: HOME (HELP GUIDE + 3 PROJECT CARDS) -->
+    <!-- ======================================================== -->
+    <!-- 1. HOME VIEW (Help Guide + 3 Flagship Project Cards)     -->
+    <!-- ======================================================== -->
     <section id="page-home" class="page-view">
       
       <!-- Hero / Help Guide Section -->
-      <div class="bg-gradient-to-b from-brand-50/70 to-white py-16 lg:py-20 border-b border-slate-200/60">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span class="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-900 text-xs font-bold uppercase tracking-wider mb-4">
+      <div class="bg-gradient-to-b from-brand-100/60 via-brand-50/40 to-transparent py-16 sm:py-24 border-b border-orange-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <!-- Large Tagline Requested -->
+          <span class="inline-block py-1.5 px-4 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-5 shadow-sm">
             Buyer's Resource & Portfolio
           </span>
-          <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight max-w-3xl mx-auto">
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
             Find Your Dream Home With Confidence & Clarity
           </h1>
-          <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            Explore our architectural developments, verified approvals, and comprehensive apartment buyer guides built for modern living.
+          
+          <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Explore our architectural developments, verified approvals, and comprehensive apartment buyer guides built for modern living in <strong class="text-slate-800">Narasaraopet</strong>.
           </p>
 
-          <!-- 3-Step Quick Help Guide -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-left">
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">1</div>
-              <h3 class="font-bold text-slate-900 text-lg">1. Choose Location & Style</h3>
-              <p class="text-sm text-slate-600 mt-2">Compare urban high-rises, eco-friendly green living, or quiet waterfront residences.</p>
+          <!-- 3-Step Buyer's Guide Box -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14 text-left">
+            <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-600 flex items-center justify-center font-bold text-lg mb-4">1</div>
+              <h3 class="font-bold text-slate-900 text-base sm:text-lg">Location & Approvals</h3>
+              <p class="text-sm text-slate-600 mt-2">100% clear legal titles, approved building plans, and prime connectivity in Narasaraopet.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-shadow">
               <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg mb-4">2</div>
-              <h3 class="font-bold text-slate-900 text-lg">2. Verified Floor Plans</h3>
-              <p class="text-sm text-slate-600 mt-2">Every unit is engineered with high carpet-area efficiency, ventilation, and clear legal titles.</p>
+              <h3 class="font-bold text-slate-900 text-base sm:text-lg">Vaastu & Ventilation</h3>
+              <p class="text-sm text-slate-600 mt-2">Engineered with high carpet area ratios, zero common walls, and strict Vaastu compliance.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-shadow">
               <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg mb-4">3</div>
-              <h3 class="font-bold text-slate-900 text-lg">3. Schedule a Walkthrough</h3>
-              <p class="text-sm text-slate-600 mt-2">Connect directly with our engineering team for private site visits and personalized pricing.</p>
+              <h3 class="font-bold text-slate-900 text-base sm:text-lg">Direct Site Walkthrough</h3>
+              <p class="text-sm text-slate-600 mt-2">Meet our engineering team directly at the site for transparent specifications and pricing.</p>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Featured Projects Section (THE 3 CARDS - ONLY HERE ON HOME) -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+      <!-- Flagship Projects Section (THE 3 CARDS - ONLY HERE ON HOME) -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Our Flagship Projects</h2>
-            <p class="text-slate-600 mt-1">Select an apartment below to view full specifications, floor plans, and amenities.</p>
+            <span class="text-xs font-bold text-brand-600 uppercase tracking-widest block">Portfolio</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">Our Flagship Projects</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Explore our signature residential communities across Narasaraopet.</p>
           </div>
-          <span class="text-sm font-semibold text-slate-400 mt-2 md:mt-0">3 Premium Communities Available</span>
+          <span class="text-xs font-bold bg-white text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full mt-3 md:mt-0 self-start md:self-auto">
+            3 Properties in Narasaraopet
+          </span>
         </div>
 
-        <!-- 3 Project Cards Grid -->
+        <!-- 3 Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <!-- Card 1 -->
-          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="h-56 bg-slate-200 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Skyline Heights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full data-p1-tag">2 & 3 BHK Luxury</span>
+          <!-- Card 1: Latest Project (Project 3) -->
+          <div class="bg-white rounded-3xl overflow-hidden border border-orange-200/80 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div class="h-60 bg-slate-200 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Latest Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-brand-500 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow">
+                ★ 3 - Latest Launch
+              </div>
+              <span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                Booking Open
+              </span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider data-p1-loc">Central City District</span>
-                <h3 class="text-xl font-bold text-slate-900 mt-1 data-p1-title">Skyline Heights</h3>
-                <p class="text-slate-600 text-sm mt-2 line-clamp-3 data-p1-summary">
-                  Ultra-modern high-rise living with infinity deck views, automated home systems, and central transit connectivity.
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider data-p3-loc">Prakash Nagar, Narasaraopet</span>
+                <h3 class="text-2xl font-extrabold text-slate-900 mt-1 data-p3-title">Latest Project</h3>
+                <p class="text-slate-600 text-sm mt-3 line-clamp-3 data-p3-summary">
+                  Our newest ultra-modern gated community featuring spacious 3 BHK luxury residences, terrace walking track, EV bays, and high-speed elevators.
                 </p>
               </div>
-              <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <span class="text-xs text-slate-400 block">Starting From</span>
-                  <span class="text-base font-extrabold text-slate-900 data-p1-price">₹1.25 Cr / $150K</span>
+                  <span class="text-xs text-slate-400 block font-medium">Configuration</span>
+                  <span class="text-base font-extrabold text-slate-900 data-p3-config">2 & 3 BHK Luxury</span>
                 </div>
-                <a href="#skyline-heights" class="px-4 py-2 rounded-lg bg-slate-900 text-white text-xs font-bold hover:bg-brand-600 transition-colors">
-                  View Project &rarr;
+                <a href="#latest-project" class="px-4 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold transition-colors shadow-sm">
+                  View Details &rarr;
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="h-56 bg-slate-200 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Greenwood Residency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <span class="absolute top-3 right-3 bg-emerald-700/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full data-p2-tag">Eco Gated Community</span>
+          <!-- Card 2: Green Leaf (Project 2) -->
+          <div class="bg-white rounded-3xl overflow-hidden border border-orange-200/80 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div class="h-60 bg-slate-200 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Green Leaf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                2 - Green Leaf
+              </div>
+              <span class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                Few Units Left
+              </span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider data-p2-loc">Suburban Parkside</span>
-                <h3 class="text-xl font-bold text-slate-900 mt-1 data-p2-title">Greenwood Residency</h3>
-                <p class="text-slate-600 text-sm mt-2 line-clamp-3 data-p2-summary">
-                  Designed around 70% open landscaped greens, solar energy grids, rainwater harvesting, and serene walking tracks.
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider data-p2-loc">Palnadu Road, Narasaraopet</span>
+                <h3 class="text-2xl font-extrabold text-slate-900 mt-1 data-p2-title">Green Leaf</h3>
+                <p class="text-slate-600 text-sm mt-3 line-clamp-3 data-p2-summary">
+                  Nature-inspired eco-apartments with landscaped gardens, 100% Vaastu layouts, power backup, and rainwater harvesting.
                 </p>
               </div>
-              <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <span class="text-xs text-slate-400 block">Starting From</span>
-                  <span class="text-base font-extrabold text-slate-900 data-p2-price">₹85 Lakhs / $105K</span>
+                  <span class="text-xs text-slate-400 block font-medium">Configuration</span>
+                  <span class="text-base font-extrabold text-slate-900 data-p2-config">2 & 3 BHK Eco Suites</span>
                 </div>
-                <a href="#greenwood-residency" class="px-4 py-2 rounded-lg bg-slate-900 text-white text-xs font-bold hover:bg-brand-600 transition-colors">
-                  View Project &rarr;
+                <a href="#green-leaf" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white text-xs font-bold transition-colors shadow-sm">
+                  View Details &rarr;
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-            <div class="h-56 bg-slate-200 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Azure Bay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <span class="absolute top-3 right-3 bg-blue-700/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full data-p3-tag">Waterfront Luxury</span>
+          <!-- Card 3: Iris Homes (Project 1 - Sold Out) -->
+          <div class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group opacity-95">
+            <div class="h-60 bg-slate-200 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Iris Homes" class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute top-3 left-3 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                1 - Iris Homes
+              </div>
+              <span class="absolute top-3 right-3 bg-slate-800 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow uppercase">
+                Sold Out
+              </span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider data-p3-loc">Bayfront Promenade</span>
-                <h3 class="text-xl font-bold text-slate-900 mt-1 data-p3-title">Azure Bay</h3>
-                <p class="text-slate-600 text-sm mt-2 line-clamp-3 data-p3-summary">
-                  Exclusive sea-facing penthouses and 3 BHK suites with private deck balconies and marina clubhouse access.
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider data-p1-loc">Arundelpet, Narasaraopet</span>
+                <h3 class="text-2xl font-extrabold text-slate-900 mt-1 data-p1-title">Iris Homes</h3>
+                <p class="text-slate-600 text-sm mt-3 line-clamp-3 data-p1-summary">
+                  A landmark completed residential community delivered on schedule with premium teakwood finishes and fully occupied happy families.
                 </p>
               </div>
-              <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <span class="text-xs text-slate-400 block">Starting From</span>
-                  <span class="text-base font-extrabold text-slate-900 data-p3-price">₹1.80 Cr / $220K</span>
+                  <span class="text-xs text-slate-400 block font-medium">Status</span>
+                  <span class="text-sm font-extrabold text-slate-600">Delivered & Occupied</span>
                 </div>
-                <a href="#azure-bay" class="px-4 py-2 rounded-lg bg-slate-900 text-white text-xs font-bold hover:bg-brand-600 transition-colors">
+                <a href="#iris-homes" class="px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold transition-colors">
                   View Project &rarr;
                 </a>
               </div>
@@ -255,56 +312,71 @@
     </section>
 
 
-    <!-- PAGE 2: DEDICATED PROJECT 1 (SKYLINE HEIGHTS) -->
-    <section id="page-skyline-heights" class="page-view">
+    <!-- ======================================================== -->
+    <!-- 2. DEDICATED VIEW: LATEST PROJECT (Project 3)            -->
+    <!-- ======================================================== -->
+    <section id="page-latest-project" class="page-view">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <a href="#home" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 mb-6">
+        <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
           <div class="lg:w-2/3">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 data-p1-title">Skyline Heights</h1>
-            <p class="text-slate-500 font-medium mt-1 data-p1-loc">Central City District</p>
+            <div class="inline-block bg-brand-100 text-brand-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+              ★ Flagship Launch
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 data-p3-title">Latest Project</h1>
+            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5 data-p3-loc">
+              <span>📍</span> Prakash Nagar, Narasaraopet, Andhra Pradesh
+            </p>
             
-            <div class="mt-6 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Skyline Heights Exterior" class="w-full h-96 object-cover" />
+            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-orange-200/80">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Latest Project Architecture" class="w-full h-[420px] object-cover" />
             </div>
 
-            <div class="mt-8 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-bold text-slate-900">Project Overview & Architecture</h2>
+            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
+              <h2 class="text-2xl font-extrabold text-slate-900">Modern Architectural Excellence in Narasaraopet</h2>
               <p>
-                Skyline Heights represents the pinnacle of contemporary urban living. Designed with high-tensile glass and seismic-resistant structural engineering, each residence captures unobstructed skyline views while ensuring optimal acoustic insulation from city bustle.
+                Our Latest Project sets a new benchmark in luxury living for Narasaraopet. Engineered with earthquake-resistant RCC framed structures, expansive balconies, and maximum natural light cross-ventilation, this project offers an unmatched lifestyle.
               </p>
-              <h3 class="text-xl font-bold text-slate-900">Key Amenities & Specifications</h3>
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> 42nd-Floor Rooftop Infinity Pool
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> Biometric Smart Locks & Video Intercom
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> Dedicated Dual EV Charging Bays
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> 100% DG Power Backup
-                </li>
-              </ul>
+              
+              <h3 class="text-xl font-bold text-slate-900 pt-3">Key Project Highlights</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-brand-500 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">100% Clear Title & Municipal Approvals</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-brand-500 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">8-Passenger Automatic Elevators</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-brand-500 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">Dedicated Car Parking with EV Charge Points</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-brand-500 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">24/7 Generator Power Backup for Common Areas</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Project Quick Stats Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 rounded-2xl border border-slate-200 shadow-md sticky top-28">
-            <h3 class="text-lg font-bold text-slate-900 mb-4">Unit Summary</h3>
-            <div class="space-y-3 text-sm pb-6 border-b border-slate-100">
+          <!-- Quick Details Sidebar Card -->
+          <div class="lg:w-1/3 w-full bg-white p-6 sm:p-8 rounded-3xl border border-orange-200 shadow-lg sticky top-28">
+            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Status: Booking Open</span>
+            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Specifications</h3>
+            
+            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-100">
+              <div class="flex justify-between"><span class="text-slate-500">Location:</span><span class="font-bold text-slate-900">Narasaraopet</span></div>
               <div class="flex justify-between"><span class="text-slate-500">Configurations:</span><span class="font-bold text-slate-900">2 & 3 BHK</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Carpet Area:</span><span class="font-bold text-slate-900">1,250 - 2,100 sq.ft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Possession:</span><span class="font-bold text-emerald-600">Ready to Move</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Starting Price:</span><span class="font-bold text-slate-900 data-p1-price">₹1.25 Cr</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Facing:</span><span class="font-bold text-slate-900">East & West (100% Vaastu)</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Structure:</span><span class="font-bold text-slate-900">Stilt + 5 Floors</span></div>
             </div>
-            <a href="#home" onclick="setTimeout(()=>document.getElementById('contact-section').scrollIntoView({behavior:'smooth'}), 100)" class="mt-6 block w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold text-center rounded-xl shadow transition-colors">
-              Book a Site Walkthrough
+
+            <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl shadow-md shadow-brand-500/30 transition-colors">
+              Inquire About Pricing & Plans
             </a>
           </div>
         </div>
@@ -312,56 +384,71 @@
     </section>
 
 
-    <!-- PAGE 3: DEDICATED PROJECT 2 (GREENWOOD RESIDENCY) -->
-    <section id="page-greenwood-residency" class="page-view">
+    <!-- ======================================================== -->
+    <!-- 3. DEDICATED VIEW: GREEN LEAF (Project 2)                 -->
+    <!-- ======================================================== -->
+    <section id="page-green-leaf" class="page-view">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <a href="#home" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-700 mb-6">
+        <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
           <div class="lg:w-2/3">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 data-p2-title">Greenwood Residency</h1>
-            <p class="text-slate-500 font-medium mt-1 data-p2-loc">Suburban Parkside</p>
+            <div class="inline-block bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+              🌿 Eco-Living Community
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 data-p2-title">Green Leaf</h1>
+            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5 data-p2-loc">
+              <span>📍</span> Palnadu Road, Narasaraopet, Andhra Pradesh
+            </p>
             
-            <div class="mt-6 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Greenwood Residency Exterior" class="w-full h-96 object-cover" />
+            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-orange-200/80">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Green Leaf Residences" class="w-full h-[420px] object-cover" />
             </div>
 
-            <div class="mt-8 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-bold text-slate-900">Sustainable Nature-First Living</h2>
+            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
+              <h2 class="text-2xl font-extrabold text-slate-900">Peaceful Living Surrounded by Greenery</h2>
               <p>
-                Greenwood Residency is built with zero-carbon footprint aspirations. Surrounded by mature green belts, organic community gardens, and pedestrianized play zones, it is the ideal retreat for growing families seeking tranquility without sacrificing city access.
+                Green Leaf combines tranquil residential surroundings with close proximity to premier schools, markets, and transit in Narasaraopet. Built with spacious floor corridors and premium vitrified tiles.
               </p>
-              <h3 class="text-xl font-bold text-slate-900">Community Features</h3>
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> 5-Acre Central Miyawaki Forest & Trail
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> Solar-Powered Common Facilities
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> Fully Equipped Children’s Playpark & Creche
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-emerald-600 font-bold">&#10003;</span> On-Site Organic Farm & Compost Hub
-                </li>
-              </ul>
+              
+              <h3 class="text-xl font-bold text-slate-900 pt-3">Community Amenities</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-emerald-600 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">24-Hour Borewell & Municipal Water Supply</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-emerald-600 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">Solar Water Heating Infrastructure</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-emerald-600 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">CCTV Surveillance Across Corridors</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
+                  <span class="text-emerald-600 font-bold text-lg">✓</span>
+                  <span class="font-semibold text-sm">Teak Wood Main Doors & UPVC Windows</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Project Quick Stats Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 rounded-2xl border border-slate-200 shadow-md sticky top-28">
-            <h3 class="text-lg font-bold text-slate-900 mb-4">Unit Summary</h3>
-            <div class="space-y-3 text-sm pb-6 border-b border-slate-100">
-              <div class="flex justify-between"><span class="text-slate-500">Configurations:</span><span class="font-bold text-slate-900">2, 3 & 4 BHK Villas</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Carpet Area:</span><span class="font-bold text-slate-900">1,400 - 2,800 sq.ft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Possession:</span><span class="font-bold text-amber-600">Q4 2026</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Starting Price:</span><span class="font-bold text-slate-900 data-p2-price">₹85 Lakhs</span></div>
+          <!-- Quick Details Sidebar Card -->
+          <div class="lg:w-1/3 w-full bg-white p-6 sm:p-8 rounded-3xl border border-orange-200 shadow-lg sticky top-28">
+            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-2.5 py-1 rounded-md">Status: Finishing Stage</span>
+            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Specifications</h3>
+            
+            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-100">
+              <div class="flex justify-between"><span class="text-slate-500">Location:</span><span class="font-bold text-slate-900">Narasaraopet</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Configurations:</span><span class="font-bold text-slate-900">2 & 3 BHK</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Availability:</span><span class="font-bold text-amber-600">Last 3 Flats Available</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Possession:</span><span class="font-bold text-slate-900">Ready in 3 Months</span></div>
             </div>
-            <a href="#home" onclick="setTimeout(()=>document.getElementById('contact-section').scrollIntoView({behavior:'smooth'}), 100)" class="mt-6 block w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-center rounded-xl shadow transition-colors">
-              Download Brochure & Pricing
+
+            <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl shadow-md shadow-brand-500/30 transition-colors">
+              Schedule Site Visit
             </a>
           </div>
         </div>
@@ -369,99 +456,101 @@
     </section>
 
 
-    <!-- PAGE 4: DEDICATED PROJECT 3 (AZURE BAY) -->
-    <section id="page-azure-bay" class="page-view">
+    <!-- ======================================================== -->
+    <!-- 4. DEDICATED VIEW: IRIS HOMES (Project 1 - Sold Out)     -->
+    <!-- ======================================================== -->
+    <section id="page-iris-homes" class="page-view">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <a href="#home" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 mb-6">
+        <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
           <div class="lg:w-2/3">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 data-p3-title">Azure Bay</h1>
-            <p class="text-slate-500 font-medium mt-1 data-p3-loc">Bayfront Promenade</p>
+            <div class="inline-block bg-slate-200 text-slate-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
+              ✓ Successfully Delivered & Completed
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 data-p1-title">Iris Homes</h1>
+            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5 data-p1-loc">
+              <span>📍</span> Arundelpet, Narasaraopet, Andhra Pradesh
+            </p>
             
-            <div class="mt-6 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Azure Bay Waterfront" class="w-full h-96 object-cover" />
+            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Iris Homes Exterior" class="w-full h-[420px] object-cover" />
             </div>
 
-            <div class="mt-8 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-bold text-slate-900">Unmatched Coastal Elegance</h2>
+            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
+              <h2 class="text-2xl font-extrabold text-slate-900">A Benchmark of Quality & Trust</h2>
               <p>
-                Azure Bay stands along the scenic coastline offering floor-to-ceiling glass corridors that capture sunrise and sunset over the water. Crafted with imported Italian marble and smart climate controls, each residence delivers elite comfort.
+                Iris Homes is a milestone project delivered with full occupancy. Built with uncompromising material standards and delivered ahead of schedule, it stands as testament to our commitment to homeowners in Narasaraopet.
               </p>
-              <h3 class="text-xl font-bold text-slate-900">Exclusive Privileges</h3>
-              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-blue-600 font-bold">&#10003;</span> Private Marina & Yacht Dock Access
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-blue-600 font-bold">&#10003;</span> 24/7 White-Glove Concierge & Valet
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-blue-600 font-bold">&#10003;</span> Temperature-Controlled Indoor Lap Pool
-                </li>
-                <li class="flex items-center gap-2 font-medium text-sm text-slate-800 bg-white p-3 rounded-lg border border-slate-200">
-                  <span class="text-blue-600 font-bold">&#10003;</span> Private Elevator Access per Penthouse
-                </li>
-              </ul>
             </div>
           </div>
 
-          <!-- Project Quick Stats Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 rounded-2xl border border-slate-200 shadow-md sticky top-28">
-            <h3 class="text-lg font-bold text-slate-900 mb-4">Unit Summary</h3>
-            <div class="space-y-3 text-sm pb-6 border-b border-slate-100">
-              <div class="flex justify-between"><span class="text-slate-500">Configurations:</span><span class="font-bold text-slate-900">3 & 4 BHK Sky Villas</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Carpet Area:</span><span class="font-bold text-slate-900">2,400 - 4,500 sq.ft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Possession:</span><span class="font-bold text-emerald-600">Ready to Move</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Starting Price:</span><span class="font-bold text-slate-900 data-p3-price">₹1.80 Cr</span></div>
+          <!-- Quick Details Sidebar Card (Sold Out Notice) -->
+          <div class="lg:w-1/3 w-full bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow sticky top-28">
+            <span class="text-xs font-bold text-slate-600 uppercase tracking-widest bg-slate-200 px-2.5 py-1 rounded-md">Status: 100% Sold Out</span>
+            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Project Summary</h3>
+            
+            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-200">
+              <div class="flex justify-between"><span class="text-slate-500">Location:</span><span class="font-bold text-slate-900">Arundelpet</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Total Units:</span><span class="font-bold text-slate-900">20 Apartments</span></div>
+              <div class="flex justify-between"><span class="text-slate-500">Completion:</span><span class="font-bold text-emerald-600">Delivered</span></div>
             </div>
-            <a href="#home" onclick="setTimeout(()=>document.getElementById('contact-section').scrollIntoView({behavior:'smooth'}), 100)" class="mt-6 block w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-center rounded-xl shadow transition-colors">
-              Schedule Private Preview
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-
-    <!-- PAGE 5: ABOUT (WITH FOUNDER / BUILDER FACE PIC) -->
-    <section id="page-about" class="page-view">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md flex flex-col md:flex-row gap-10 items-center">
-          
-          <!-- Founder Face Photo -->
-          <div class="flex-shrink-0 text-center">
-            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-slate-200 mx-auto">
-              <img id="about-founder-pic" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Founder Portrait" class="w-full h-full object-cover" />
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mt-4 data-founder-name">Rajesh V. Sharma</h3>
-            <p class="text-sm font-semibold text-brand-600 data-founder-title">Managing Director & Chief Architect</p>
-          </div>
-
-          <!-- Bio & Builder Philosophy -->
-          <div class="flex-grow space-y-4 text-slate-700">
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Leadership & Vision</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Building Homes Grounded in Quality, Trust & Longevity
-            </h2>
-            <p class="text-sm sm:text-base leading-relaxed data-about-bio">
-              With over 20 years of civil engineering excellence, our leadership has delivered over 2 million square feet of residential space. We believe that true luxury lies in uncompromising build quality, transparent legal titles, and communities designed to last for generations.
+            <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+              All units in Iris Homes have been handed over. Please check our <strong>Latest Project</strong> or <strong>Green Leaf</strong> for current availability.
             </p>
 
-            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-100 text-center">
-              <div>
-                <div class="text-2xl font-extrabold text-slate-900">20+</div>
-                <div class="text-xs text-slate-500 font-medium">Years Experience</div>
+            <a href="#latest-project" class="mt-6 block w-full py-3.5 bg-slate-900 hover:bg-brand-600 text-white font-bold text-center rounded-xl transition-colors">
+              Explore Our Latest Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================== -->
+    <!-- 5. ABOUT FOUNDER VIEW                                    -->
+    <!-- ======================================================== -->
+    <section id="page-about" class="page-view">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-orange-200/80 shadow-lg flex flex-col md:flex-row gap-10 items-center">
+          
+          <!-- Founder Face Photo (Circular Frame) -->
+          <div class="flex-shrink-0 text-center">
+            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-xl border-4 border-white ring-4 ring-brand-500 mx-auto">
+              <img id="about-founder-pic" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Founder Portrait" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 mt-5 data-founder-name">Founder Name</h3>
+            <p class="text-xs font-bold text-brand-600 uppercase tracking-widest mt-1 data-founder-title">Founder & Managing Director</p>
+          </div>
+
+          <!-- Bio & Philosophy -->
+          <div class="flex-grow space-y-4 text-slate-700">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+              Leadership & Trust
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Building Homes Grounded in Quality, Transparency & Vaastu
+            </h2>
+            <p class="text-sm sm:text-base leading-relaxed data-about-bio">
+              At Laxmika Builders, our mission is to redefine residential construction in Narasaraopet. Every project is executed with personal on-site supervision, top-grade structural steel and cement, clear legal approvals, and on-time handover. We don't just build apartments; we build lifelong relationships.
+            </p>
+
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100 text-center">
+              <div class="bg-brand-50/50 p-3 rounded-xl border border-orange-100">
+                <div class="text-2xl font-extrabold text-brand-600">3+</div>
+                <div class="text-xs text-slate-600 font-semibold mt-1">Landmark Projects</div>
               </div>
-              <div>
-                <div class="text-2xl font-extrabold text-slate-900">1,500+</div>
-                <div class="text-xs text-slate-500 font-medium">Families Housed</div>
+              <div class="bg-brand-50/50 p-3 rounded-xl border border-orange-100">
+                <div class="text-2xl font-extrabold text-brand-600">100%</div>
+                <div class="text-xs text-slate-600 font-semibold mt-1">Vaastu Compliant</div>
               </div>
-              <div>
-                <div class="text-2xl font-extrabold text-slate-900">100%</div>
-                <div class="text-xs text-slate-500 font-medium">On-Time Delivery</div>
+              <div class="bg-brand-50/50 p-3 rounded-xl border border-orange-100">
+                <div class="text-2xl font-extrabold text-brand-600">Narasaraopet</div>
+                <div class="text-xs text-slate-600 font-semibold mt-1">Core Focus</div>
               </div>
             </div>
           </div>
@@ -473,70 +562,100 @@
   </main>
 
 
-  <!-- ========================================== -->
-  <!-- COMMON BOTTOM SECTION (CONTACT & FOOTER)   -->
-  <!-- ========================================== -->
-  <footer id="contact-section" class="bg-slate-900 text-slate-300 border-t border-slate-800">
+  <!-- ======================================================== -->
+  <!-- COMMON BOTTOM / FOOTER (SALES & INQUIRE FORM)            -->
+  <!-- ======================================================== -->
+  <footer id="footer-contact" class="bg-slate-950 text-slate-300 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
         
-        <!-- Col 1: Builder Info -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg bg-brand-500 text-white flex items-center justify-center font-extrabold text-sm data-brand-initial">B</div>
-            <span class="text-lg font-bold text-white data-brand-name">Builder Name</span>
+        <!-- Left Col: Builder Overview (4 Cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-12 rounded-lg bg-brand-500 text-white flex items-center justify-center font-extrabold text-sm border border-orange-300">
+              LB
+            </div>
+            <div>
+              <span class="text-xl font-extrabold text-white block leading-tight data-brand-name">Laxmika Builders</span>
+              <span class="text-xs text-brand-400 font-bold uppercase tracking-wider">Narasaraopet</span>
+            </div>
           </div>
+
           <p class="text-sm text-slate-400 leading-relaxed">
             Developing premier residential living with modern engineering, verified legal documentation, and architectural excellence.
           </p>
-          <div class="text-xs text-slate-500 font-mono">
-            RERA ID: <span class="data-rera-id">PRM/KA/RERA/1251/310/PR/210405</span>
+
+          <div class="text-xs text-slate-400 font-mono bg-slate-900 p-3 rounded-xl border border-slate-800">
+            <span class="text-slate-500 block">RERA ID:</span>
+            <span class="font-bold text-white data-rera-id">PRM/AP/RERA/2026/001</span>
           </div>
         </div>
 
-        <!-- Col 2: Quick Links -->
-        <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Navigation</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#home" class="hover:text-white transition-colors">Home & Help Guide</a></li>
-            <li><a href="#skyline-heights" class="hover:text-white transition-colors data-p1-nav">Skyline Heights</a></li>
-            <li><a href="#greenwood-residency" class="hover:text-white transition-colors data-p2-nav">Greenwood Residency</a></li>
-            <li><a href="#azure-bay" class="hover:text-white transition-colors data-p3-nav">Azure Bay</a></li>
-            <li><a href="#about" class="hover:text-white transition-colors">About the Founder</a></li>
+        <!-- Middle Col: Navigation (2 Cols) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#home" class="hover:text-brand-400 transition-colors">Home & Help Guide</a></li>
+            <li><a href="#latest-project" class="hover:text-brand-400 transition-colors data-p3-nav">Latest Project</a></li>
+            <li><a href="#green-leaf" class="hover:text-brand-400 transition-colors data-p2-nav">Green Leaf</a></li>
+            <li><a href="#iris-homes" class="hover:text-brand-400 transition-colors data-p1-nav">Iris Homes</a></li>
+            <li><a href="#about" class="hover:text-brand-400 transition-colors">About the Founder</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Direct Contact Info -->
-        <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Sales & Office</h4>
-          <ul class="space-y-3 text-sm">
-            <li class="flex items-start gap-2">
-              <span class="text-brand-500">&#128205;</span>
-              <span class="data-builder-address">45 Heritage Boulevard, Prime Tech Corridor, Mysuru, Karnataka</span>
+        <!-- Middle-Right Col: Sales & Office (3 Cols) -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Sales & Office</h4>
+          <ul class="space-y-3.5 text-sm">
+            <li class="flex items-start gap-2.5">
+              <span class="text-base text-brand-400">📍</span>
+              <div>
+                <span class="data-builder-address block text-slate-300">Main Road, Near Clock Tower, Narasaraopet, Palnadu Dist, Andhra Pradesh 522601</span>
+                <!-- Clickable Google Maps Link -->
+                <a id="google-maps-link" href="https://maps.google.com/?q=Narasaraopet" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-400 font-bold hover:underline mt-1 inline-block">
+                  View on Google Maps &rarr;
+                </a>
+              </div>
             </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-500">&#128222;</span>
-              <span class="data-builder-phone">+91 98765 43210</span>
+            <li class="flex items-center gap-2.5">
+              <span class="text-base text-brand-400">📞</span>
+              <a href="tel:+919845012345" class="data-builder-phone hover:text-white transition-colors">+91 98450 12345</a>
             </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-500">&#9993;</span>
-              <span class="data-builder-email">sales@builderproperties.com</span>
+            <li class="flex items-center gap-2.5">
+              <span class="text-base text-brand-400">✉</span>
+              <a href="mailto:contact@laxmikabuilders.com" class="data-builder-email hover:text-white transition-colors">contact@laxmikabuilders.com</a>
             </li>
           </ul>
         </div>
 
-        <!-- Col 4: Lead Inquiry Form (Static Form Compatible) -->
-        <div>
-          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Request a Callback</h4>
-          <form onsubmit="event.preventDefault(); alert('Thank you! Our sales team will reach out to you shortly.'); this.reset();" class="flex flex-col gap-2.5">
-            <input type="text" placeholder="Your Name" required class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
-            <input type="tel" placeholder="Phone Number" required class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-500" />
-            <select class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-brand-500">
-              <option value="Skyline Heights">Skyline Heights</option>
-              <option value="Greenwood Residency">Greenwood Residency</option>
-              <option value="Azure Bay">Azure Bay</option>
-            </select>
-            <button type="submit" class="mt-1 w-full py-2 bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm rounded-lg transition-colors shadow">
+        <!-- Right Col: Request a Callback Form (3 Cols) -->
+        <div class="lg:col-span-3 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-inner">
+          <h4 class="text-sm font-extrabold text-white mb-1">Request a Callback</h4>
+          <p class="text-xs text-slate-400 mb-4">Leave your details for pricing & floor plans.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Thank you! Our sales team will call you shortly regarding your selected apartment.'); this.reset();" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Your Name</label>
+              <input type="text" placeholder="Full Name" required class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors" />
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Phone Number</label>
+              <input type="tel" placeholder="+91 98765 43210" required class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors" />
+            </div>
+
+            <!-- Dropdown with 2 Latest active options; Iris Homes disabled/sold out -->
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Select Project</label>
+              <select class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-brand-500 transition-colors">
+                <option value="Latest Project">3. Latest Project (Booking Open)</option>
+                <option value="Green Leaf">2. Green Leaf (Few Flats Left)</option>
+                <option value="Iris Homes" disabled class="text-slate-500">1. Iris Homes (Sold Out)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm rounded-xl transition-all shadow-md shadow-brand-500/20 mt-2">
               Submit Inquiry
             </button>
           </form>
@@ -544,13 +663,15 @@
 
       </div>
 
-      <div class="mt-12 pt-8 border-t border-slate-800/80 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div>&copy; 2026 <span class="data-brand-name">Builder Name</span>. All Rights Reserved.</div>
+      <!-- Copyright Bar -->
+      <div class="mt-14 pt-8 border-t border-slate-800/80 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>&copy; 2026 <span class="data-brand-name">Laxmika Builders</span>. All Rights Reserved.</div>
         <div class="flex gap-4">
           <a href="#home" class="hover:underline">Privacy Policy</a>
           <a href="#home" class="hover:underline">Terms of Service</a>
         </div>
       </div>
+
     </div>
   </footer>
 
@@ -560,100 +681,113 @@
   <!-- ========================================================= -->
   <script>
     /* ========================================================
-       1. GLOBAL CONFIGURATION (Change your details all at once)
+       1. GLOBAL CONFIGURATION (Edit details in one place)
        ======================================================== */
     const SITE_CONFIG = {
       builder: {
-        brandName: "Prestige Crest Builders",
-        initial: "P",
+        brandName: "Laxmika Builders",
+        location: "Narasaraopet",
         phone: "+91 98450 12345",
-        email: "contact@prestigecrest.com",
-        address: "Plot 12, Outer Ring Road, Hebbal, Mysuru, Karnataka 570017",
-        reraId: "PRM/KA/RERA/1251/310/PR/202601",
+        email: "contact@laxmikabuilders.com",
+        address: "Main Road, Near Clock Tower, Narasaraopet, Palnadu Dist, Andhra Pradesh 522601",
+        googleMapsQuery: "Narasaraopet+Andhra+Pradesh",
+        reraId: "PRM/AP/RERA/2026/001",
       },
       founder: {
-        name: "Vikramaditya Rao",
-        title: "Founder & Principal Developer",
+        name: "Srikanth Reddy",
+        title: "Founder & Managing Director",
         image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
-        bio: "With over two decades of experience constructing iconic residential communities, Vikramaditya leads our design ethos with a strict focus on structural longevity, green certifications, and transparent customer relations."
+        bio: "With deep roots in Narasaraopet, our leadership has focused on creating reliable, Vaastu-perfect, high-quality residential communities. Every project is built with transparent titles and direct builder supervision."
       },
       projects: {
-        p1: {
-          id: "skyline-heights",
-          name: "Skyline Heights",
-          tag: "2 & 3 BHK Luxury",
-          location: "Central City District",
-          price: "₹1.25 Cr ($150K)",
-          summary: "Ultra-modern high-rise living with infinity deck views, automated home systems, and central transit connectivity."
-        },
-        p2: {
-          id: "greenwood-residency",
-          name: "Greenwood Residency",
-          tag: "Eco Gated Community",
-          location: "Suburban Parkside",
-          price: "₹85 Lakhs ($105K)",
-          summary: "Designed around 70% open landscaped greens, solar energy grids, rainwater harvesting, and serene walking tracks."
-        },
+        // Project 3: Latest Project (Placed toward logo on left)
         p3: {
-          id: "azure-bay",
-          name: "Azure Bay",
-          tag: "Waterfront Luxury",
-          location: "Bayfront Promenade",
-          price: "₹1.80 Cr ($220K)",
-          summary: "Exclusive sea-facing penthouses and 3 BHK suites with private deck balconies and marina clubhouse access."
+          id: "latest-project",
+          name: "Latest Project",
+          config: "2 & 3 BHK Luxury",
+          location: "Prakash Nagar, Narasaraopet",
+          summary: "Our newest ultra-modern gated community featuring spacious 3 BHK luxury residences, terrace walking track, EV bays, and high-speed elevators."
+        },
+        // Project 2: Green Leaf (Middle)
+        p2: {
+          id: "green-leaf",
+          name: "Green Leaf",
+          config: "2 & 3 BHK Eco Suites",
+          location: "Palnadu Road, Narasaraopet",
+          summary: "Nature-inspired eco-apartments with landscaped gardens, 100% Vaastu layouts, power backup, and rainwater harvesting."
+        },
+        // Project 1: Iris Homes (Right among three - Sold Out)
+        p1: {
+          id: "iris-homes",
+          name: "Iris Homes",
+          config: "2 & 3 BHK (Sold Out)",
+          location: "Arundelpet, Narasaraopet",
+          summary: "A landmark completed residential community delivered on schedule with premium teakwood finishes and fully occupied happy families."
         }
       }
     };
 
     /* ========================================================
-       2. POPULATE GLOBAL VARIABLES INTO DOM
+       2. POPULATE GLOBAL CONFIG INTO DOM
        ======================================================== */
     function populateConfig() {
       // Builder Info
       document.querySelectorAll('.data-brand-name').forEach(el => el.textContent = SITE_CONFIG.builder.brandName);
-      document.querySelectorAll('.data-brand-initial').forEach(el => el.textContent = SITE_CONFIG.builder.initial);
-      document.querySelectorAll('.data-builder-phone').forEach(el => el.textContent = SITE_CONFIG.builder.phone);
-      document.querySelectorAll('.data-builder-email').forEach(el => el.textContent = SITE_CONFIG.builder.email);
+      document.querySelectorAll('.data-brand-location').forEach(el => el.textContent = SITE_CONFIG.builder.location);
+      document.querySelectorAll('.data-builder-phone').forEach(el => {
+        el.textContent = SITE_CONFIG.builder.phone;
+        el.href = `tel:${SITE_CONFIG.builder.phone.replace(/[^0-9+]/g, '')}`;
+      });
+      document.querySelectorAll('.data-builder-email').forEach(el => {
+        el.textContent = SITE_CONFIG.builder.email;
+        el.href = `mailto:${SITE_CONFIG.builder.email}`;
+      });
       document.querySelectorAll('.data-builder-address').forEach(el => el.textContent = SITE_CONFIG.builder.address);
       document.querySelectorAll('.data-rera-id').forEach(el => el.textContent = SITE_CONFIG.builder.reraId);
+
+      const mapsLink = document.getElementById('google-maps-link');
+      if (mapsLink) mapsLink.href = `https://maps.google.com/?q=${SITE_CONFIG.builder.googleMapsQuery}`;
 
       // Founder Info
       document.querySelectorAll('.data-founder-name').forEach(el => el.textContent = SITE_CONFIG.founder.name);
       document.querySelectorAll('.data-founder-title').forEach(el => el.textContent = SITE_CONFIG.founder.title);
       document.querySelectorAll('.data-about-bio').forEach(el => el.textContent = SITE_CONFIG.founder.bio);
+      document.querySelectorAll('.data-founder-mini-pic').forEach(el => el.src = SITE_CONFIG.founder.image);
       const founderPic = document.getElementById('about-founder-pic');
       if (founderPic) founderPic.src = SITE_CONFIG.founder.image;
 
-      // Project 1
-      document.querySelectorAll('.data-p1-nav, .data-p1-title').forEach(el => el.textContent = SITE_CONFIG.projects.p1.name);
-      document.querySelectorAll('.data-p1-loc').forEach(el => el.textContent = SITE_CONFIG.projects.p1.location);
-      document.querySelectorAll('.data-p1-price').forEach(el => el.textContent = SITE_CONFIG.projects.p1.price);
-      document.querySelectorAll('.data-p1-tag').forEach(el => el.textContent = SITE_CONFIG.projects.p1.tag);
-      document.querySelectorAll('.data-p1-summary').forEach(el => el.textContent = SITE_CONFIG.projects.p1.summary);
-
-      // Project 2
-      document.querySelectorAll('.data-p2-nav, .data-p2-title').forEach(el => el.textContent = SITE_CONFIG.projects.p2.name);
-      document.querySelectorAll('.data-p2-loc').forEach(el => el.textContent = SITE_CONFIG.projects.p2.location);
-      document.querySelectorAll('.data-p2-price').forEach(el => el.textContent = SITE_CONFIG.projects.p2.price);
-      document.querySelectorAll('.data-p2-tag').forEach(el => el.textContent = SITE_CONFIG.projects.p2.tag);
-      document.querySelectorAll('.data-p2-summary').forEach(el => el.textContent = SITE_CONFIG.projects.p2.summary);
-
-      // Project 3
+      // Project 3 (Latest)
       document.querySelectorAll('.data-p3-nav, .data-p3-title').forEach(el => el.textContent = SITE_CONFIG.projects.p3.name);
       document.querySelectorAll('.data-p3-loc').forEach(el => el.textContent = SITE_CONFIG.projects.p3.location);
-      document.querySelectorAll('.data-p3-price').forEach(el => el.textContent = SITE_CONFIG.projects.p3.price);
-      document.querySelectorAll('.data-p3-tag').forEach(el => el.textContent = SITE_CONFIG.projects.p3.tag);
+      document.querySelectorAll('.data-p3-config').forEach(el => el.textContent = SITE_CONFIG.projects.p3.config);
       document.querySelectorAll('.data-p3-summary').forEach(el => el.textContent = SITE_CONFIG.projects.p3.summary);
+
+      // Project 2 (Green Leaf)
+      document.querySelectorAll('.data-p2-nav, .data-p2-title').forEach(el => el.textContent = SITE_CONFIG.projects.p2.name);
+      document.querySelectorAll('.data-p2-loc').forEach(el => el.textContent = SITE_CONFIG.projects.p2.location);
+      document.querySelectorAll('.data-p2-config').forEach(el => el.textContent = SITE_CONFIG.projects.p2.config);
+      document.querySelectorAll('.data-p2-summary').forEach(el => el.textContent = SITE_CONFIG.projects.p2.summary);
+
+      // Project 1 (Iris Homes)
+      document.querySelectorAll('.data-p1-nav, .data-p1-title').forEach(el => el.textContent = SITE_CONFIG.projects.p1.name);
+      document.querySelectorAll('.data-p1-loc').forEach(el => el.textContent = SITE_CONFIG.projects.p1.location);
+      document.querySelectorAll('.data-p1-config').forEach(el => el.textContent = SITE_CONFIG.projects.p1.config);
+      document.querySelectorAll('.data-p1-summary').forEach(el => el.textContent = SITE_CONFIG.projects.p1.summary);
     }
 
     /* ========================================================
-       3. CLIENT-SIDE ROUTER (Single Page View Controller)
+       3. CLIENT-SIDE ROUTER
        ======================================================== */
-    const validPages = ['home', 'skyline-heights', 'greenwood-residency', 'azure-bay', 'about'];
+    const validPages = ['home', 'latest-project', 'green-leaf', 'iris-homes', 'about'];
 
     function handleRoute() {
-      // Extract hash (e.g. #skyline-heights -> skyline-heights)
       let hash = window.location.hash.replace('#', '').trim().toLowerCase();
+      
+      // If user clicks footer anchor link directly, stay on current page
+      if (hash === 'footer-contact' || hash === 'contact-section') {
+        return;
+      }
+
       if (!validPages.includes(hash)) {
         hash = 'home';
       }
@@ -669,15 +803,15 @@
         targetView.classList.add('active');
       }
 
-      // Update Active Navigation Button Styling
+      // Update Navigation Active State
       document.querySelectorAll('.nav-btn').forEach(btn => {
         const btnPage = btn.getAttribute('data-page');
         if (btnPage === hash) {
-          btn.classList.add('bg-slate-900', 'text-white');
-          btn.classList.remove('text-slate-700', 'hover:bg-slate-100');
+          btn.classList.add('bg-brand-500', 'text-white', 'shadow-sm');
+          btn.classList.remove('text-slate-700', 'hover:bg-brand-100/70');
         } else {
-          btn.classList.remove('bg-slate-900', 'text-white');
-          btn.classList.add('text-slate-700', 'hover:bg-slate-100');
+          btn.classList.remove('bg-brand-500', 'text-white', 'shadow-sm');
+          btn.classList.add('text-slate-700', 'hover:bg-brand-100/70');
         }
       });
 
@@ -688,14 +822,14 @@
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
-    // Event Listeners for Routing
+    // Event Listeners for Hash Navigation
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('DOMContentLoaded', () => {
       populateConfig();
       handleRoute();
     });
 
-    // Mobile Hamburger Toggle
+    // Mobile Menu Toggle
     document.getElementById('mobile-toggle').addEventListener('click', () => {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
