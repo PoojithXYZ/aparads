@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laxmika Builders | Premium Apartments in Narasaraopet & Hyderabad</title>
-  <meta name="description" content="Laxmika Builders - Premier residential apartments in Narasaraopet and Hyderabad. Yellow Stone, Green Leaf 1 & 2, and Iris Homes." />
+  <title>Laxmika Builders | Real Estate & Apartments</title>
+  <meta name="description" content="Laxmika Builders - Yellow Stone, Green Leaf 1, Green Leaf 2, and Iris Homes." />
 
   <!-- Google Fonts & Tailwind CSS CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -18,17 +18,18 @@
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
             brand: {
-              50: '#fffaf5',   /* Ultra-light warm orange background */
-              100: '#ffeedd',  /* Light orange badge/accent */
-              200: '#fed7aa',  /* Soft peach border */
-              400: '#fb923c',  /* Warm orange */
-              500: '#f97316',  /* Primary vibrant orange */
-              600: '#ea580c',  /* Deep button orange */
-              700: '#c2410c',  /* Dark accent */
-              900: '#7c2d12',  /* Rich brand wood/brown */
+              50: '#fffaf5',
+              100: '#ffeedd',
+              200: '#fed7aa',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              900: '#7c2d12',
             }
           }
         }
@@ -37,11 +38,10 @@
   </script>
 
   <style>
-    /* Clean single page tab transitions */
     .page-view {
       display: none;
       opacity: 0;
-      transition: opacity 0.25s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
     }
     .page-view.active {
       display: block;
@@ -50,6 +50,11 @@
     html {
       scroll-behavior: smooth;
     }
+    /* Spreadsheet table styling */
+    .sheet-table th, .sheet-table td {
+      border: 1px solid #fed7aa;
+      padding: 0.65rem 0.9rem;
+    }
   </style>
 </head>
 <body class="bg-brand-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased">
@@ -57,17 +62,15 @@
   <!-- ========================================== -->
   <!-- HEADER & NAVIGATION                        -->
   <!-- ========================================== -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-200/70 shadow-sm">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-200/80 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-24">
         
         <!-- Clickable Logo (Tall Rectangular Box + Text on Right) -->
         <a href="#home" class="flex items-center gap-3.5 group">
-          <!-- Taller Rectangular Box for logo.png -->
           <div class="w-12 h-16 rounded-xl bg-gradient-to-b from-brand-500 to-brand-700 p-1 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform overflow-hidden border border-orange-300">
-            <img src="logo.png" alt="Laxmika Builders Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-white font-extrabold text-xl tracking-tighter\'>LB</span>';" class="w-full h-full object-contain" />
+            <img src="logo.png" alt="Laxmika Builders Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-white font-extrabold text-xl\'>LB</span>';" class="w-full h-full object-contain" />
           </div>
-          <!-- Right Side Text -->
           <div class="flex flex-col">
             <span class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight leading-tight group-hover:text-brand-600 transition-colors data-brand-name">
               Laxmika Builders
@@ -84,42 +87,36 @@
             Home
           </a>
           
-          <!-- 4: Yellow Stone (Latest Project on left) -->
           <a href="#yellow-stone" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-1.5" data-page="yellow-stone">
             <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
             <span class="data-p4-nav">4. Yellow Stone</span>
           </a>
           
-          <!-- 3: Green Leaf 1 -->
           <a href="#green-leaf-1" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all" data-page="green-leaf-1">
             <span class="data-p3-nav">3. Green Leaf 1</span>
           </a>
 
-          <!-- 2: Green Leaf 2 -->
           <a href="#green-leaf-2" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all" data-page="green-leaf-2">
             <span class="data-p2-nav">2. Green Leaf 2</span>
           </a>
           
-          <!-- 1: Iris Homes (Right among four) -->
           <a href="#iris-homes" class="nav-btn px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-1.5" data-page="iris-homes">
             <span class="data-p1-nav">1. Iris Homes</span>
             <span class="text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded font-bold uppercase">Sold Out</span>
           </a>
           
-          <!-- Founder with circular face photo inside button -->
           <a href="#about" class="nav-btn px-3.5 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-100/70 transition-all flex items-center gap-2" data-page="about">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="Founder" class="w-6 h-6 rounded-full object-cover ring-2 ring-brand-500 data-founder-mini-pic" />
             <span>Founder</span>
           </a>
 
-          <!-- Inquire Now (Scrolls smoothly to Contact section in Footer) -->
-          <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-brand-500 text-white hover:bg-brand-600 shadow-md shadow-brand-500/25 hover:shadow-lg transition-all flex items-center gap-1.5">
+          <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="ml-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-brand-500 text-white hover:bg-brand-600 shadow-md shadow-brand-500/25 transition-all flex items-center gap-1.5">
             <span>Inquire Now</span>
             <span>&darr;</span>
           </a>
         </nav>
 
-        <!-- Tablet / Medium Desktop Bar (Fallback for intermediate screens) -->
+        <!-- Tablet / Intermediate Screen Nav -->
         <div class="hidden lg:flex 2xl:hidden items-center gap-2">
           <a href="#home" class="nav-btn px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-brand-100" data-page="home">Home</a>
           <a href="#yellow-stone" class="nav-btn px-2.5 py-1.5 rounded-lg text-xs font-bold text-slate-700 hover:bg-brand-100" data-page="yellow-stone">Yellow Stone</a>
@@ -133,7 +130,7 @@
           <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-brand-500 text-white">Inquire</a>
         </div>
 
-        <!-- Mobile Menu Hamburger Button -->
+        <!-- Mobile Hamburger Toggle -->
         <div class="lg:hidden flex items-center gap-2">
           <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-brand-500 text-white shadow-sm">
             Inquire
@@ -156,7 +153,7 @@
         </a>
         <a href="#green-leaf-1" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 flex items-center justify-between">
           <span>3. Green Leaf 1</span>
-          <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">5th Floor Avail</span>
+          <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">5th Flr Avail</span>
         </a>
         <a href="#green-leaf-2" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50">2. Green Leaf 2</a>
         <a href="#iris-homes" class="mobile-nav-btn px-4 py-2.5 rounded-lg font-semibold text-slate-700 hover:bg-orange-50 flex items-center justify-between">
@@ -178,7 +175,7 @@
   <main class="flex-grow">
 
     <!-- ======================================================== -->
-    <!-- 1. HOME VIEW (Help Guide + 4 Flagship Project Cards)     -->
+    <!-- 1. HOME VIEW (Help Guide + 4 Cards)                      -->
     <!-- ======================================================== -->
     <section id="page-home" class="page-view">
       
@@ -220,20 +217,20 @@
         </div>
       </div>
 
-      <!-- Flagship Projects Section (THE 4 CARDS - ONLY HERE ON HOME) -->
+      <!-- Flagship Projects Section (THE 4 CARDS ONLY ON HOME) -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span class="text-xs font-bold text-brand-600 uppercase tracking-widest block">Portfolio</span>
             <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">Our Flagship Projects</h2>
-            <p class="text-slate-600 mt-2 text-sm sm:text-base">Click on any project card below to view detailed specifications, floor availability, and amenities.</p>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">Click on any project card below to view detailed specifications, spreadsheet data, and amenities.</p>
           </div>
           <span class="text-xs font-bold bg-white text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full mt-3 md:mt-0 self-start md:self-auto">
             4 Signature Residential Properties
           </span>
         </div>
 
-        <!-- 4 Cards Grid (2x2 on Desktop, 1 Col on Mobile) -->
+        <!-- 4 Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <!-- Card 4: Yellow Stone (Latest) -->
@@ -275,7 +272,7 @@
                 3. Green Leaf 1
               </div>
               <span class="absolute top-3 right-3 bg-emerald-700 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
-                1 Unit Left (5th Flr)
+                5th Flr Available
               </span>
             </div>
             <div class="p-5 flex-grow flex flex-col justify-between">
@@ -365,333 +362,649 @@
     </section>
 
 
-    <!-- ======================================================== -->
-    <!-- 2. DEDICATED VIEW: YELLOW STONE (Project 4 - Latest)     -->
-    <!-- ======================================================== -->
+    <!-- ========================================================================= -->
+    <!-- 2. DEDICATED VIEW: YELLOW STONE (Exact Excel Layout)                       -->
+    <!-- ========================================================================= -->
     <section id="page-yellow-stone" class="page-view">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-          <div class="lg:w-2/3">
-            <div class="inline-block bg-brand-100 text-brand-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
-              ★ 4 - Latest Flagship Launch
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Yellow Stone</h1>
-            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5">
-              <span>📍</span> Behind Oakland School, Ramireddypet, Narasaraopeta, Andhra Pradesh
-            </p>
-            
-            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-orange-200/80">
-              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Yellow Stone Elevation" class="w-full h-[400px] object-cover" />
-            </div>
-
-            <!-- Full Specifications Table -->
-            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-extrabold text-slate-900">Project Overview & Pricing Structure</h2>
-              <p>
-                Yellow Stone is designed for families seeking generous living space, superior ventilation, and prime residential proximity to top educational institutions in Ramireddypet, Narasaraopet.
-              </p>
-
-              <!-- Floor-Wise Pricing Table -->
-              <div class="bg-white rounded-2xl border border-orange-200 overflow-hidden shadow-sm">
-                <table class="w-full text-left text-sm">
-                  <thead class="bg-brand-100/70 text-slate-900 font-extrabold">
-                    <tr>
-                      <th class="p-3.5">Floor Level</th>
-                      <th class="p-3.5">Flat Area</th>
-                      <th class="p-3.5">UDS</th>
-                      <th class="p-3.5">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-slate-100">
-                    <tr>
-                      <td class="p-3.5 font-bold text-slate-800">Ground to 4th Floor</td>
-                      <td class="p-3.5">1600 sft</td>
-                      <td class="p-3.5 font-semibold">34 sq yds</td>
-                      <td class="p-3.5 font-extrabold text-brand-600">₹62 Lakhs</td>
-                    </tr>
-                    <tr>
-                      <td class="p-3.5 font-bold text-slate-800">5th Floor</td>
-                      <td class="p-3.5">1600 sft</td>
-                      <td class="p-3.5 font-semibold">34 sq yds</td>
-                      <td class="p-3.5 font-extrabold text-brand-600">₹58 Lakhs</td>
-                    </tr>
-                    <tr>
-                      <td class="p-3.5 font-bold text-slate-800">Penthouse Floor</td>
-                      <td class="p-3.5">1600 sft</td>
-                      <td class="p-3.5 font-semibold">34 sq yds</td>
-                      <td class="p-3.5 font-extrabold text-emerald-600">₹44 Lakhs</td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div class="bg-white rounded-3xl border border-orange-200 shadow-lg overflow-hidden">
+          
+          <!-- Header Banner -->
+          <div class="bg-gradient-to-r from-brand-500 to-brand-700 text-white p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-widest font-bold bg-white/20 px-3 py-1 rounded-full">Project 4 &bull; Latest Launch</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-2">Yellow Stone</h1>
+                <p class="text-brand-100 font-medium text-sm mt-1">Location: Narasaraopeta</p>
               </div>
-              
-              <h3 class="text-xl font-bold text-slate-900 pt-3">Utilities & Documentation</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-brand-500 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">100% Vaastu Compliant (East & West Facing)</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-brand-500 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Front Elevation & Floor Plans Available</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-brand-500 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Elevator, Parking & CCTV Security Included</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-brand-500 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Continuous Water Source & Power Infrastructure</span>
-                </div>
-              </div>
+              <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="self-start sm:self-auto bg-white text-brand-700 hover:bg-brand-50 font-bold px-5 py-2.5 rounded-xl text-sm shadow transition-colors">
+                Inquire for Booking
+              </a>
             </div>
           </div>
 
-          <!-- Quick Details Sidebar Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 sm:p-8 rounded-3xl border border-orange-200 shadow-lg sticky top-28">
-            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Booking Open</span>
-            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Unit Summary</h3>
-            
-            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-100">
-              <div class="flex justify-between"><span class="text-slate-500">Location:</span><span class="font-bold text-slate-900">Ramireddypet, NRT</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Landmark:</span><span class="font-bold text-slate-900">Behind Oakland School</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Flat Area:</span><span class="font-bold text-slate-900">1600 sft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">UDS per Flat:</span><span class="font-bold text-slate-900">34 sq yds</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Facing:</span><span class="font-bold text-slate-900">East & West</span></div>
+          <div class="p-6 sm:p-8">
+            <div class="mb-8 rounded-2xl overflow-hidden shadow border border-orange-200">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Yellow Stone" class="w-full h-80 object-cover" />
             </div>
 
-            <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl shadow-md shadow-brand-500/30 transition-colors">
-              Inquire / Book Flat
-            </a>
+            <!-- EXCEL SHEET PROPERTY TABLE -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm sheet-table bg-white">
+                <tbody>
+                  <tr class="bg-orange-50/70 font-bold text-slate-900">
+                    <td class="w-1/4">Project Name</td>
+                    <td colspan="4" class="text-brand-700 font-extrabold text-base">Yellow Stone</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Location</td>
+                    <td colspan="4">Narasaraopeta</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Address (Addr)</td>
+                    <td colspan="4">behind Oakland school Ramireddypet</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Landmarks</td>
+                    <td colspan="4">Oakland School, Ramireddypet</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Plot Area</td>
+                    <td colspan="4">-</td>
+                  </tr>
+
+                  <!-- Common Utilities Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Common Utils</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Elevator</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Parking</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Water-src</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Power</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Security [ cctv ]</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Vaastu</td>
+                    <td colspan="4"><span class="font-bold text-emerald-700">100% compliant</span> &bull; East & West facing</td>
+                  </tr>
+
+                  <!-- Unit & Pricing Breakdown -->
+                  <tr class="bg-orange-100/70 font-bold text-slate-900">
+                    <td>Unit Matrix</td>
+                    <td class="font-extrabold text-center">2 BHK</td>
+                    <td class="font-extrabold text-center">3 BHK</td>
+                    <td class="font-extrabold text-center">4 BHK</td>
+                    <td class="font-extrabold text-center">Penthouse</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Total count</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Sold</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Available / Near Completion</td>
+                    <td class="text-center text-emerald-700 font-bold" colspan="4">Available for Booking</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Under Construction</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Rent</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr class="bg-brand-50/80">
+                    <td class="font-bold">Price</td>
+                    <td colspan="2" class="font-extrabold text-brand-700">₹62 L (upto 4th floor)</td>
+                    <td class="font-extrabold text-brand-700">₹58 L (in 5th floor)</td>
+                    <td class="font-extrabold text-emerald-700">₹44 L (in penthouse)</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Flat Area</td>
+                    <td colspan="4" class="font-bold">1600 sft</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">UDS</td>
+                    <td colspan="4" class="font-bold text-slate-900">34 sq yds</td>
+                  </tr>
+
+                  <!-- Documentation Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Documentation & Media</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Docs</td>
+                    <td colspan="4" class="text-emerald-700 font-bold">Available</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Front Elevation</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Floor Plan</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Approvals</td>
+                    <td colspan="4">Clear Titles & Approved Plans</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ======================================================== -->
-    <!-- 3. DEDICATED VIEW: GREEN LEAF 1 (Project 3)              -->
-    <!-- ======================================================== -->
+    <!-- ========================================================================= -->
+    <!-- 3. DEDICATED VIEW: GREEN LEAF 1 (Exact Excel Layout)                      -->
+    <!-- ========================================================================= -->
     <section id="page-green-leaf-1" class="page-view">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-          <div class="lg:w-2/3">
-            <div class="inline-block bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
-              🌿 Ultra-Luxury 3100 sft Suite
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Green Leaf 1</h1>
-            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5">
-              <span>📍</span> Prime Residential Zone, Narasaraopeta, Andhra Pradesh
-            </p>
-            
-            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-orange-200/80">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Green Leaf 1" class="w-full h-[400px] object-cover" />
-            </div>
-
-            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-extrabold text-slate-900">Unmatched Grandeur on 5th Floor</h2>
-              <p>
-                Green Leaf 1 features a signature <strong>3100 sft single-flat luxury layout on the 5th floor</strong>, delivering an expansive residential mansion feel in the sky with 84 sq yds of UDS land share.
-              </p>
-              
-              <h3 class="text-xl font-bold text-slate-900 pt-3">Special Project Features & Security</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-emerald-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">2 Dedicated Car Parking Slots</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-emerald-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Electric Perimeter Security Fence</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-emerald-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Generator Power Backup for Lift & Flats</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-emerald-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Drone Views & Video Walkthrough Available</span>
-                </div>
+        <div class="bg-white rounded-3xl border border-orange-200 shadow-lg overflow-hidden">
+          
+          <!-- Header Banner -->
+          <div class="bg-gradient-to-r from-emerald-600 to-teal-800 text-white p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-widest font-bold bg-white/20 px-3 py-1 rounded-full">Project 3 &bull; Luxury Floor</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-2">Green Leaf 1</h1>
+                <p class="text-emerald-100 font-medium text-sm mt-1">Location: Narasaraopeta</p>
               </div>
+              <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="self-start sm:self-auto bg-white text-emerald-800 hover:bg-emerald-50 font-bold px-5 py-2.5 rounded-xl text-sm shadow transition-colors">
+                Inquire for 5th Floor
+              </a>
             </div>
           </div>
 
-          <!-- Quick Details Sidebar Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 sm:p-8 rounded-3xl border border-orange-200 shadow-lg sticky top-28">
-            <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">Status: 1 Unit on 5th Floor</span>
-            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Key Specifications</h3>
-            
-            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-100">
-              <div class="flex justify-between"><span class="text-slate-500">Available:</span><span class="font-bold text-slate-900">5th Floor Luxury Flat</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Flat Area:</span><span class="font-bold text-slate-900">3100 sft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">UDS Share:</span><span class="font-bold text-slate-900">84 sq yds</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Vaastu / Facing:</span><span class="font-bold text-emerald-600">East Facing (100%)</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Parking:</span><span class="font-bold text-slate-900">2 Car Parking Slots</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Price:</span><span class="font-extrabold text-brand-600 text-base">₹1.10 Crore</span></div>
+          <div class="p-6 sm:p-8">
+            <div class="mb-8 rounded-2xl overflow-hidden shadow border border-orange-200">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Green Leaf 1" class="w-full h-80 object-cover" />
             </div>
 
-            <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl shadow-md shadow-brand-500/30 transition-colors">
-              Request Site Visit / Drone Tour
-            </a>
+            <!-- EXCEL SHEET PROPERTY TABLE -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm sheet-table bg-white">
+                <tbody>
+                  <tr class="bg-emerald-50/80 font-bold text-slate-900">
+                    <td class="w-1/4">Project Name</td>
+                    <td colspan="4" class="text-emerald-800 font-extrabold text-base">Green Leaf 1</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Location</td>
+                    <td colspan="4">Narasaraopeta</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Addr</td>
+                    <td colspan="4">Narasaraopeta</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Landmarks</td>
+                    <td colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Plot Area</td>
+                    <td colspan="4">-</td>
+                  </tr>
+
+                  <!-- Common Utilities Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Common Utils</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Elevator</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Parking</td>
+                    <td colspan="4" class="font-bold text-slate-900">2 parking slots</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Water-src</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Power</td>
+                    <td colspan="4" class="font-semibold text-slate-900">Generator backup</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Security [ cctv ]</td>
+                    <td colspan="4" class="font-semibold text-slate-900">Electric fence & CCTV</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Vaastu</td>
+                    <td colspan="4"><span class="font-bold text-emerald-700">100% compliant</span> &bull; East facing</td>
+                  </tr>
+
+                  <!-- Unit & Pricing Breakdown -->
+                  <tr class="bg-emerald-100/70 font-bold text-slate-900">
+                    <td>Unit Matrix</td>
+                    <td class="font-extrabold text-center">2 BHK</td>
+                    <td class="font-extrabold text-center">3 BHK</td>
+                    <td class="font-extrabold text-center" colspan="2">4 BHK / Suite</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Total count</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Sold</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr class="bg-emerald-50">
+                    <td class="font-bold">Available / Near Completion</td>
+                    <td colspan="4" class="font-extrabold text-emerald-800">
+                      1 [5th floor] &bull; 2 parking &bull; East facing
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Under Construction</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Rent</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr class="bg-brand-50/80">
+                    <td class="font-bold">Price</td>
+                    <td colspan="4" class="font-extrabold text-brand-700 text-base">1.1 cr</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Flat Area</td>
+                    <td colspan="4" class="font-bold">3100 sft</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">UDS</td>
+                    <td colspan="4" class="font-bold text-slate-900">84 sq yds</td>
+                  </tr>
+
+                  <!-- Documentation Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Documentation & Media</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Docs</td>
+                    <td colspan="4" class="text-emerald-700 font-bold">Available</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Front Elevation</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Floor Plan</td>
+                    <td colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Other</td>
+                    <td colspan="4" class="font-semibold text-slate-800">Tour, Drone video available</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ======================================================== -->
-    <!-- 4. DEDICATED VIEW: GREEN LEAF 2 (Project 2)              -->
-    <!-- ======================================================== -->
+    <!-- ========================================================================= -->
+    <!-- 4. DEDICATED VIEW: GREEN LEAF 2 (Exact Excel Layout)                      -->
+    <!-- ========================================================================= -->
     <section id="page-green-leaf-2" class="page-view">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-          <div class="lg:w-2/3">
-            <div class="inline-block bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
-              🌿 2000 sft Premium Residences
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Green Leaf 2</h1>
-            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5">
-              <span>📍</span> Near Kamma Hostel, Rayapadu Road, Narasaraopeta, Andhra Pradesh
-            </p>
-            
-            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-orange-200/80">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Green Leaf 2" class="w-full h-[400px] object-cover" />
-            </div>
-
-            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-extrabold text-slate-900">Strategic Location & Spacious Planning</h2>
-              <p>
-                Situated on Rayapadu Road near Kamma Hostel, Green Leaf 2 offers large 2000 sft units featuring 47 sq yds UDS. Complete front elevation architectural designs and floor plans are ready for review.
-              </p>
-              
-              <h3 class="text-xl font-bold text-slate-900 pt-3">Features & Provisions</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-amber-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">100% Vaastu Compliant (East & West Units)</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-amber-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Full Approved Floor Plans & Front Elevation</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-amber-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Dedicated Parking Bays & Automatic Elevator</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-orange-100 shadow-sm flex items-center gap-3">
-                  <span class="text-amber-600 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">CCTV Security & Continuous Water Source</span>
-                </div>
+        <div class="bg-white rounded-3xl border border-orange-200 shadow-lg overflow-hidden">
+          
+          <!-- Header Banner -->
+          <div class="bg-gradient-to-r from-amber-600 to-amber-800 text-white p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-widest font-bold bg-white/20 px-3 py-1 rounded-full">Project 2 &bull; 2000 sft</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-2">Green Leaf 2</h1>
+                <p class="text-amber-100 font-medium text-sm mt-1">Location: Narasaraopeta</p>
               </div>
+              <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="self-start sm:self-auto bg-white text-amber-800 hover:bg-amber-50 font-bold px-5 py-2.5 rounded-xl text-sm shadow transition-colors">
+                Inquire for Green Leaf 2
+              </a>
             </div>
           </div>
 
-          <!-- Quick Details Sidebar Card -->
-          <div class="lg:w-1/3 w-full bg-white p-6 sm:p-8 rounded-3xl border border-orange-200 shadow-lg sticky top-28">
-            <span class="text-xs font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-2.5 py-1 rounded-md">Status: In Progress</span>
-            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Specifications</h3>
-            
-            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-100">
-              <div class="flex justify-between"><span class="text-slate-500">Location:</span><span class="font-bold text-slate-900">Rayapadu Road, NRT</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Landmark:</span><span class="font-bold text-slate-900">Near Kamma Hostel</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Flat Area:</span><span class="font-bold text-slate-900">2000 sft</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">UDS Share:</span><span class="font-bold text-slate-900">47 sq yds</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Facing:</span><span class="font-bold text-slate-900">East & West</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Price:</span><span class="font-extrabold text-brand-600 text-base">₹65 Lakhs</span></div>
+          <div class="p-6 sm:p-8">
+            <div class="mb-8 rounded-2xl overflow-hidden shadow border border-orange-200">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Green Leaf 2" class="w-full h-80 object-cover" />
             </div>
 
-            <a href="#footer-contact" onclick="document.getElementById('footer-contact').scrollIntoView({behavior:'smooth'})" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl shadow-md shadow-brand-500/30 transition-colors">
-              Inquire for Floor Plans
-            </a>
+            <!-- EXCEL SHEET PROPERTY TABLE -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm sheet-table bg-white">
+                <tbody>
+                  <tr class="bg-amber-50/80 font-bold text-slate-900">
+                    <td class="w-1/4">Project Name</td>
+                    <td colspan="4" class="text-amber-800 font-extrabold text-base">Green Leaf 2</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Location</td>
+                    <td colspan="4">Narasaraopeta</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Addr</td>
+                    <td colspan="4">Near kamma hostel raayapadu road</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Landmarks</td>
+                    <td colspan="4">Kamma Hostel, Raayapadu Road</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Plot Area</td>
+                    <td colspan="4">-</td>
+                  </tr>
+
+                  <!-- Common Utilities Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Common Utils</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Elevator</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Parking</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Water-src</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Power</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Security [ cctv ]</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Vaastu</td>
+                    <td colspan="4"><span class="font-bold text-emerald-700">100% compliant</span> &bull; East & West facing</td>
+                  </tr>
+
+                  <!-- Unit & Pricing Breakdown -->
+                  <tr class="bg-amber-100/70 font-bold text-slate-900">
+                    <td>Unit Matrix</td>
+                    <td class="font-extrabold text-center">2 BHK</td>
+                    <td class="font-extrabold text-center">3 BHK</td>
+                    <td class="font-extrabold text-center" colspan="2">4 BHK</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Total count</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Sold</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Available / Near Completion</td>
+                    <td class="text-center text-emerald-700 font-bold" colspan="4">Available</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Under Construction</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Rent</td>
+                    <td class="text-center" colspan="4">-</td>
+                  </tr>
+                  <tr class="bg-brand-50/80">
+                    <td class="font-bold">Price</td>
+                    <td class="text-center font-extrabold text-brand-700">65 l</td>
+                    <td class="text-center font-extrabold text-brand-700">65 l</td>
+                    <td class="text-center font-extrabold text-brand-700" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Flat Area</td>
+                    <td class="text-center font-bold">2000 sft</td>
+                    <td class="text-center font-bold">2000 sft</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">UDS</td>
+                    <td class="text-center font-bold text-slate-900">47 sq yds</td>
+                    <td class="text-center font-bold text-slate-900">47 sq yds</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+
+                  <!-- Documentation Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Documentation & Media</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Docs</td>
+                    <td colspan="4" class="text-emerald-700 font-bold">Available</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Front Elevation</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Floor Plan</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-brand-50/50">Approvals</td>
+                    <td colspan="4">Clear Titles & Approved Plans</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ======================================================== -->
-    <!-- 5. DEDICATED VIEW: IRIS HOMES (Project 1 - Hyderabad)    -->
-    <!-- ======================================================== -->
+    <!-- ========================================================================= -->
+    <!-- 5. DEDICATED VIEW: IRIS HOMES (Exact Excel Layout)                        -->
+    <!-- ========================================================================= -->
     <section id="page-iris-homes" class="page-view">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <a href="#home" class="inline-flex items-center text-sm font-bold text-brand-600 hover:text-brand-700 mb-6">
           &larr; Back to all projects
         </a>
         
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-          <div class="lg:w-2/3">
-            <div class="inline-block bg-slate-200 text-slate-700 text-xs font-extrabold px-3 py-1 rounded-full mb-2">
-              ✓ 100% Sold Out & Handed Over (Hyderabad)
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Iris Homes</h1>
-            <p class="text-slate-600 font-semibold mt-1 flex items-center gap-1.5">
-              <span>📍</span> HMT Swarnapuri Colony, Miyapur, Hyderabad (Near MNR School)
-            </p>
-            
-            <div class="mt-6 rounded-3xl overflow-hidden shadow-xl border border-slate-200">
-              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Iris Homes Miyapur" class="w-full h-[400px] object-cover grayscale-[15%]" />
-            </div>
-
-            <div class="mt-10 space-y-6 text-slate-700 leading-relaxed">
-              <h2 class="text-2xl font-extrabold text-slate-900">Successfully Delivered Landmark in Miyapur</h2>
-              <p>
-                Iris Homes stands as a premier completed residential project by Laxmika Builders in Hyderabad. Built on a 400 sq yds plot, each 3 BHK unit spans 2550 sft with an impressive 100 sq yds of UDS land allocation.
-              </p>
-              
-              <h3 class="text-xl font-bold text-slate-900 pt-3">Delivered Specifications</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                  <span class="text-slate-700 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">4 Grand 3 BHK Units (All 4 Sold Out)</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                  <span class="text-slate-700 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">100% Vaastu Compliant West Facing</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                  <span class="text-slate-700 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Elevator, Parking, Power & CCTV Security</span>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                  <span class="text-slate-700 font-bold text-lg">✓</span>
-                  <span class="font-semibold text-sm">Front Elevation & Full Documents Handed Over</span>
-                </div>
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden">
+          
+          <!-- Header Banner -->
+          <div class="bg-gradient-to-r from-slate-800 to-slate-950 text-white p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-widest font-bold bg-white/20 px-3 py-1 rounded-full">Project 1 &bull; Hyderabad</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mt-2">Iris Homes</h1>
+                <p class="text-slate-300 font-medium text-sm mt-1">Location: Hyderabad</p>
               </div>
+              <span class="bg-slate-700 text-white font-extrabold px-4 py-2 rounded-xl text-xs uppercase tracking-widest border border-slate-600">
+                100% Sold Out
+              </span>
             </div>
           </div>
 
-          <!-- Quick Details Sidebar Card (Sold Out Notice) -->
-          <div class="lg:w-1/3 w-full bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow sticky top-28">
-            <span class="text-xs font-bold text-slate-600 uppercase tracking-widest bg-slate-200 px-2.5 py-1 rounded-md">Status: 100% Sold Out</span>
-            <h3 class="text-xl font-extrabold text-slate-900 mt-3 mb-4">Delivered Project Stats</h3>
-            
-            <div class="space-y-3.5 text-sm pb-6 border-b border-slate-200">
-              <div class="flex justify-between"><span class="text-slate-500">City:</span><span class="font-bold text-slate-900">Hyderabad (Miyapur)</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Plot Area:</span><span class="font-bold text-slate-900">400 sq yds</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Unit Size:</span><span class="font-bold text-slate-900">2550 sft (3 BHK)</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">UDS per Unit:</span><span class="font-bold text-slate-900">100 sq yds</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Units:</span><span class="font-bold text-emerald-700">4 Total (4 Sold)</span></div>
+          <div class="p-6 sm:p-8">
+            <div class="mb-8 rounded-2xl overflow-hidden shadow border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Iris Homes" class="w-full h-80 object-cover grayscale-[20%]" />
             </div>
 
-            <p class="text-xs text-slate-500 mt-4 leading-relaxed">
-              Looking for open units? Check our ongoing developments in Narasaraopet (<strong>Yellow Stone</strong> and <strong>Green Leaf 1 & 2</strong>).
-            </p>
+            <!-- EXCEL SHEET PROPERTY TABLE -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm sheet-table bg-white">
+                <tbody>
+                  <tr class="bg-slate-100 font-bold text-slate-900">
+                    <td class="w-1/4">Project Name</td>
+                    <td colspan="4" class="text-slate-900 font-extrabold text-base">Iris Homes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Location</td>
+                    <td colspan="4">Hyderabad</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Addr</td>
+                    <td colspan="4">HMT Swarnapuri Colony, Miyapur</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Landmarks</td>
+                    <td colspan="4">MNR School</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Plot Area</td>
+                    <td colspan="4" class="font-bold">400 sy (sq yards)</td>
+                  </tr>
 
-            <a href="#yellow-stone" class="mt-6 block w-full py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-center rounded-xl transition-colors shadow">
-              Explore Yellow Stone (Latest)
-            </a>
+                  <!-- Common Utilities Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Common Utils</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Elevator</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Parking</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Water-src</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Power</td>
+                    <td colspan="4">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Security [ cctv ]</td>
+                    <td colspan="4" class="font-semibold text-slate-800">cctv</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Vaastu</td>
+                    <td colspan="4"><span class="font-bold text-emerald-700">100% compliant</span> &bull; West</td>
+                  </tr>
+
+                  <!-- Unit & Pricing Breakdown -->
+                  <tr class="bg-slate-200 font-bold text-slate-900">
+                    <td>Unit Matrix</td>
+                    <td class="font-extrabold text-center">2 BHK</td>
+                    <td class="font-extrabold text-center">3 BHK</td>
+                    <td class="font-extrabold text-center" colspan="2">4 BHK</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Total count</td>
+                    <td class="text-center font-bold">0</td>
+                    <td class="text-center font-bold text-brand-700">4</td>
+                    <td class="text-center font-bold" colspan="2">0</td>
+                  </tr>
+                  <tr class="bg-slate-100">
+                    <td class="font-bold">Sold</td>
+                    <td class="text-center font-bold">0</td>
+                    <td class="text-center font-bold text-emerald-700">4</td>
+                    <td class="text-center font-bold" colspan="2">0</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Available / Near Completion</td>
+                    <td class="text-center text-slate-400" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Under Construction</td>
+                    <td class="text-center text-slate-400" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Rent</td>
+                    <td class="text-center text-slate-400" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Price</td>
+                    <td class="text-center text-slate-400" colspan="4">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Flat Area</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center font-bold">2550 sft</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">UDS</td>
+                    <td class="text-center">-</td>
+                    <td class="text-center font-bold">100 sy (sq yards)</td>
+                    <td class="text-center" colspan="2">-</td>
+                  </tr>
+
+                  <!-- Documentation Section -->
+                  <tr class="bg-slate-100 font-bold text-slate-800">
+                    <td colspan="5">Documentation & Media</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Docs</td>
+                    <td colspan="4" class="text-emerald-700 font-bold">Available</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Front Elevation</td>
+                    <td colspan="4" class="font-semibold text-emerald-700">Yes</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Floor Plan</td>
+                    <td colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="font-bold bg-slate-50">Approvals</td>
+                    <td colspan="4">Delivered & Handed Over</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
@@ -705,7 +1018,6 @@
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="bg-white rounded-3xl p-8 sm:p-12 border border-orange-200/80 shadow-lg flex flex-col md:flex-row gap-10 items-center">
           
-          <!-- Founder Face Photo (Circular Frame) -->
           <div class="flex-shrink-0 text-center">
             <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-xl border-4 border-white ring-4 ring-brand-500 mx-auto">
               <img id="about-founder-pic" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Venkata Rama Krishna Reddy Talla" class="w-full h-full object-cover" />
@@ -713,28 +1025,22 @@
             <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-5 data-founder-name">Venkata Rama Krishna Reddy Talla</h3>
             <p class="text-xs font-bold text-brand-600 uppercase tracking-widest mt-1 data-founder-title">Founder & Managing Director</p>
             
-            <!-- Direct Contact Icons under Face -->
             <div class="flex items-center justify-center gap-3 mt-4">
-              <!-- Phone -->
               <a href="tel:+917842007007" title="Call Founder" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-500 hover:text-white text-slate-700 flex items-center justify-center transition-colors text-sm font-bold shadow-sm">
                 📞
               </a>
-              <!-- WhatsApp -->
               <a href="https://wa.me/917842007007?text=Hello%20Mr.%20Venkata%20Rama%20Krishna%20Reddy,%20I%20am%20interested%20in%20Laxmika%20Builders%20apartments." target="_blank" rel="noopener noreferrer" title="WhatsApp" class="w-9 h-9 rounded-full bg-emerald-100 hover:bg-emerald-500 hover:text-white text-emerald-700 flex items-center justify-center transition-colors text-sm font-bold shadow-sm">
                 💬
               </a>
-              <!-- Email -->
               <a href="mailto:laxmikabuilders@gmail.com" title="Email Us" class="w-9 h-9 rounded-full bg-red-100 hover:bg-red-500 hover:text-white text-red-600 flex items-center justify-center transition-colors text-sm font-bold shadow-sm">
                 ✉
               </a>
-              <!-- LinkedIn -->
               <a href="https://www.linkedin.com/in/vrkr-talla-521b9b167/" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile" class="w-9 h-9 rounded-full bg-blue-100 hover:bg-blue-600 hover:text-white text-blue-700 flex items-center justify-center transition-colors text-xs font-extrabold shadow-sm">
                 in
               </a>
             </div>
           </div>
 
-          <!-- Bio & Leadership Content -->
           <div class="flex-grow space-y-4 text-slate-700">
             <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
               Leadership & Trust
@@ -794,8 +1100,8 @@
           </p>
 
           <div class="text-xs text-slate-400 font-mono bg-slate-900 p-3 rounded-xl border border-slate-800">
-            <span class="text-slate-500 block">RERA & Approvals:</span>
-            <span class="font-bold text-white data-rera-id">Clear Titles & Approved Plans</span>
+            <span class="text-slate-500 block">Approvals & Title:</span>
+            <span class="font-bold text-white data-rera-id">Clear Titles & Approved Building Plans</span>
           </div>
         </div>
 
@@ -820,7 +1126,6 @@
               <span class="text-base text-brand-400">📍</span>
               <div>
                 <span class="data-builder-address block text-slate-300">Narasaraopeta, Palnadu Dist, Andhra Pradesh 522601</span>
-                <!-- Clickable Google Maps Link -->
                 <a id="google-maps-link" href="https://maps.google.com/?q=Narasaraopeta+Palnadu+Andhra+Pradesh" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-400 font-bold hover:underline mt-1 inline-block">
                   View on Google Maps &rarr;
                 </a>
@@ -861,7 +1166,6 @@
               <input type="tel" placeholder="+91 78420 07007" required class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors" />
             </div>
 
-            <!-- Dropdown with Active Options; Iris Homes marked Sold Out -->
             <div>
               <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Select Apartment</label>
               <select class="w-full px-3.5 py-2 text-sm bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-brand-500 transition-colors">
@@ -880,7 +1184,6 @@
 
       </div>
 
-      <!-- Copyright Bar -->
       <div class="mt-14 pt-8 border-t border-slate-800/80 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div>&copy; 2026 <span class="data-brand-name">Laxmika Builders</span>. All Rights Reserved.</div>
         <div class="flex gap-4">
@@ -897,9 +1200,6 @@
   <!-- JAVASCRIPT: GLOBAL CONFIG & CLIENT-SIDE ROUTER            -->
   <!-- ========================================================= -->
   <script>
-    /* ========================================================
-       1. GLOBAL CONFIGURATION (Update all properties at once)
-       ======================================================== */
     const SITE_CONFIG = {
       builder: {
         brandName: "Laxmika Builders",
@@ -908,7 +1208,7 @@
         email: "laxmikabuilders@gmail.com",
         address: "Narasaraopeta, Palnadu Dist, Andhra Pradesh 522601",
         googleMapsQuery: "Narasaraopeta+Palnadu+Andhra+Pradesh",
-        reraId: "Approved Building Plans & Clear Titles",
+        reraId: "Clear Titles & Approved Building Plans",
       },
       founder: {
         name: "Venkata Rama Krishna Reddy Talla",
@@ -921,63 +1221,14 @@
         bio: "Led by Venkata Rama Krishna Reddy Talla, Laxmika Builders has established a reputation for delivering premium residential apartments with unmatched structural integrity across Narasaraopet and Hyderabad. From expansive 3100 sft single-floor luxury flats to high-efficiency family homes, every project emphasizes high UDS allocation, 100% Vaastu compliance, and transparent legal approvals."
       },
       projects: {
-        // Project 4: Yellow Stone (Latest)
-        p4: {
-          id: "yellow-stone",
-          name: "Yellow Stone",
-          tag: "4 - Latest Launch",
-          location: "Behind Oakland School, Ramireddypet, Narasaraopeta",
-          area: "1600 sft",
-          uds: "34 sq yds",
-          facing: "East & West (100% Vaastu)",
-          pricing: "Rs 62L (Upto 4th Flr), Rs 58L (5th Flr), Rs 44L (Penthouse)",
-          summary: "East & West facing 1600 sft luxury units with 34 sq yds UDS. Starting at ₹44L (Penthouse), ₹58L (5th Flr), and ₹62L (Upto 4th Flr)."
-        },
-        // Project 3: Green Leaf 1
-        p3: {
-          id: "green-leaf-1",
-          name: "Green Leaf 1",
-          tag: "3 - 5th Floor Available",
-          location: "Narasaraopeta",
-          area: "3100 sft",
-          uds: "84 sq yds",
-          facing: "East Facing (100% Vaastu)",
-          pricing: "₹1.10 Crore",
-          summary: "Massive 3100 sft single floor luxury suite on 5th floor. 84 sq yds UDS, East facing, 2 car parking bays, generator backup & electric fence."
-        },
-        // Project 2: Green Leaf 2
-        p2: {
-          id: "green-leaf-2",
-          name: "Green Leaf 2",
-          tag: "2 - Rayapadu Road",
-          location: "Near Kamma Hostel, Rayapadu Road, Narasaraopeta",
-          area: "2000 sft",
-          uds: "47 sq yds",
-          facing: "East & West (100% Vaastu)",
-          pricing: "₹65 Lakhs",
-          summary: "Spacious 2000 sft residences with 47 sq yds UDS. 100% East & West Vaastu compliant units at ₹65 Lakhs with complete floor plans."
-        },
-        // Project 1: Iris Homes (Hyderabad - Sold Out)
-        p1: {
-          id: "iris-homes",
-          name: "Iris Homes",
-          tag: "1 - 100% Sold Out",
-          location: "HMT Swarnapuri Colony, Miyapur, Hyderabad",
-          landmark: "Near MNR School",
-          plotArea: "400 sq yds",
-          area: "2550 sft (4 Units - All Sold)",
-          uds: "100 sq yds",
-          facing: "West Facing (100% Vaastu)",
-          summary: "Delivered 400 sq yds residential project with 2550 sft luxury flats and 100 sq yds UDS. All 4 units successfully handed over."
-        }
+        p4: { id: "yellow-stone", name: "Yellow Stone" },
+        p3: { id: "green-leaf-1", name: "Green Leaf 1" },
+        p2: { id: "green-leaf-2", name: "Green Leaf 2" },
+        p1: { id: "iris-homes", name: "Iris Homes" }
       }
     };
 
-    /* ========================================================
-       2. POPULATE GLOBAL CONFIG INTO DOM
-       ======================================================== */
     function populateConfig() {
-      // Builder Info
       document.querySelectorAll('.data-brand-name').forEach(el => el.textContent = SITE_CONFIG.builder.brandName);
       document.querySelectorAll('.data-brand-location').forEach(el => el.textContent = SITE_CONFIG.builder.location);
       document.querySelectorAll('.data-builder-phone').forEach(el => {
@@ -994,33 +1245,19 @@
       const mapsLink = document.getElementById('google-maps-link');
       if (mapsLink) mapsLink.href = `https://maps.google.com/?q=${SITE_CONFIG.builder.googleMapsQuery}`;
 
-      // Founder Info
       document.querySelectorAll('.data-founder-name').forEach(el => el.textContent = SITE_CONFIG.founder.name);
       document.querySelectorAll('.data-founder-title').forEach(el => el.textContent = SITE_CONFIG.founder.title);
       document.querySelectorAll('.data-about-bio').forEach(el => el.textContent = SITE_CONFIG.founder.bio);
       document.querySelectorAll('.data-founder-mini-pic').forEach(el => el.src = SITE_CONFIG.founder.image);
       const founderPic = document.getElementById('about-founder-pic');
       if (founderPic) founderPic.src = SITE_CONFIG.founder.image;
-
-      // Project 4 (Yellow Stone)
-      document.querySelectorAll('.data-p4-nav, .data-p4-title').forEach(el => el.textContent = SITE_CONFIG.projects.p4.name);
-      // Project 3 (Green Leaf 1)
-      document.querySelectorAll('.data-p3-nav, .data-p3-title').forEach(el => el.textContent = SITE_CONFIG.projects.p3.name);
-      // Project 2 (Green Leaf 2)
-      document.querySelectorAll('.data-p2-nav, .data-p2-title').forEach(el => el.textContent = SITE_CONFIG.projects.p2.name);
-      // Project 1 (Iris Homes)
-      document.querySelectorAll('.data-p1-nav, .data-p1-title').forEach(el => el.textContent = SITE_CONFIG.projects.p1.name);
     }
 
-    /* ========================================================
-       3. CLIENT-SIDE ROUTER (Seamless Hash Routing)
-       ======================================================== */
     const validPages = ['home', 'yellow-stone', 'green-leaf-1', 'green-leaf-2', 'iris-homes', 'about'];
 
     function handleRoute() {
       let hash = window.location.hash.replace('#', '').trim().toLowerCase();
       
-      // If user clicks footer anchor directly, maintain page view
       if (hash === 'footer-contact' || hash === 'contact-section') {
         return;
       }
@@ -1029,18 +1266,15 @@
         hash = 'home';
       }
 
-      // Hide all page views
       document.querySelectorAll('.page-view').forEach(view => {
         view.classList.remove('active');
       });
 
-      // Show targeted page
       const targetView = document.getElementById(`page-${hash}`);
       if (targetView) {
         targetView.classList.add('active');
       }
 
-      // Update Navigation Tab Active Styles
       document.querySelectorAll('.nav-btn').forEach(btn => {
         const btnPage = btn.getAttribute('data-page');
         if (btnPage === hash) {
@@ -1052,21 +1286,16 @@
         }
       });
 
-      // Close mobile menu if open
       document.getElementById('mobile-menu').classList.add('hidden');
-
-      // Scroll smoothly to top on page switch
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
-    // Hash navigation event listeners
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('DOMContentLoaded', () => {
       populateConfig();
       handleRoute();
     });
 
-    // Mobile Hamburger Toggle
     document.getElementById('mobile-toggle').addEventListener('click', () => {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
